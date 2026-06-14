@@ -29,6 +29,136 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
+
+    <!-- To facilitate tailwindcss to allow proper functionality -->
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- To facilitate tailwindcss to allow proper functionality -->
+     <!-- to facilitate tailwindcss to allow proper functionality -->
+     <script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-fixed": "#001f26",
+              "on-tertiary-fixed-variant": "#584400",
+              "secondary-container": "#d3e1f6",
+              "surface-container-high": "#e6e8ea",
+              background: "#f7f9fb",
+              "surface-variant": "#e0e3e5",
+              "on-surface": "#191c1e",
+              "on-secondary-fixed": "#0f1c2c",
+              "on-tertiary-container": "#564200",
+              "secondary-fixed": "#d6e4f9",
+              "on-primary-container": "#004b5a",
+              "on-tertiary-fixed": "#241a00",
+              "surface-tint": "#00687b",
+              secondary: "#525f71",
+              "surface-container-low": "#f2f4f6",
+              "on-primary-fixed-variant": "#004e5d",
+              tertiary: "#755b00",
+              "inverse-on-surface": "#eff1f3",
+              "on-secondary": "#ffffff",
+              error: "#ba1a1a",
+              "surface-dim": "#d8dadc",
+              "surface-container-highest": "#e0e3e5",
+              "inverse-primary": "#44d7f9",
+              outline: "#6c797d",
+              "on-surface-variant": "#3c494d",
+              "error-container": "#ffdad6",
+              "tertiary-fixed": "#ffdf90",
+              "surface-bright": "#f7f9fb",
+              "surface-container-lowest": "#ffffff",
+              "tertiary-container": "#daac10",
+              "tertiary-fixed-dim": "#f0c12c",
+              "on-primary": "#ffffff",
+              "outline-variant": "#bbc9cd",
+              "on-secondary-container": "#566475",
+              "on-error": "#ffffff",
+              surface: "#f7f9fb",
+              "secondary-fixed-dim": "#bac8dc",
+              "primary-fixed": "#aeecff",
+              "primary-container": "#1cc2e3",
+              "on-error-container": "#93000a",
+              "on-secondary-fixed-variant": "#3a4859",
+              "on-background": "#191c1e",
+              "on-tertiary": "#ffffff",
+              "primary-fixed-dim": "#44d7f9",
+              "surface-container": "#eceef0",
+              primary: "#00687b",
+              "inverse-surface": "#2d3133",
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+            spacing: {
+              gutter: "24px",
+              "container-max": "1200px",
+              "section-padding": "80px",
+              base: "8px",
+              "margin-mobile": "16px",
+            },
+            fontFamily: {
+              "headline-md": ["Plus Jakarta Sans"],
+              "body-lg": ["Plus Jakarta Sans"],
+              "headline-xl": ["Plus Jakarta Sans"],
+              "headline-lg": ["Plus Jakarta Sans"],
+              "stat-value": ["Plus Jakarta Sans"],
+              "headline-lg-mobile": ["Plus Jakarta Sans"],
+              "label-bold": ["Plus Jakarta Sans"],
+              "body-md": ["Plus Jakarta Sans"],
+            },
+            fontSize: {
+              "headline-md": ["24px", { lineHeight: "1.4", fontWeight: "600" }],
+              "body-lg": ["18px", { lineHeight: "1.6", fontWeight: "400" }],
+              "headline-xl": [
+                "56px",
+                {
+                  lineHeight: "1.1",
+                  letterSpacing: "-0.02em",
+                  fontWeight: "800",
+                },
+              ],
+              "headline-lg": [
+                "40px",
+                {
+                  lineHeight: "1.2",
+                  letterSpacing: "-0.01em",
+                  fontWeight: "700",
+                },
+              ],
+              "stat-value": ["28px", { lineHeight: "1", fontWeight: "700" }],
+              "headline-lg-mobile": [
+                "32px",
+                { lineHeight: "1.2", fontWeight: "700" },
+              ],
+              "label-bold": ["14px", { lineHeight: "1.2", fontWeight: "700" }],
+              "body-md": ["16px", { lineHeight: "1.5", fontWeight: "400" }],
+            },
+          },
+        },
+      };
+    </script>
+    <!-- to facilitate tailwindcss to allow proper functionality -->
+
+
+
     <style>
       /* ===== HOME PAGE EXTRA STYLES ===== */
 
@@ -478,7 +608,59 @@
           max-width: 280px;
         }
       }
+       /*<!-- To facilitate tailwindcss to allow proper functionality --> */
+       .material-symbols-outlined {
+        font-variation-settings:
+          "FILL" 0,
+          "wght" 400,
+          "GRAD" 0,
+          "opsz" 24;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .image-strip-hover {
+        transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+      }
+      .image-strip-container:hover .image-strip-hover {
+        transform: scale(1.02);
+      }
+      .carousel-track {
+        display: flex;
+        transition: transform 0.7s cubic-bezier(0.83, 0, 0.17, 1);
+      }
+      .glass-effect {
+        backdrop-filter: blur(8px);
+        background: rgba(255, 255, 255, 0.8);
+      }
+
+      .star-icon-filled {
+        color: #ffb400; /* Gold color for filled stars */
+      }
+
+      @media (max-width: 768px) {
+        .stats-row-mobile {
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          gap: 1.5rem;
+        }
+        .stats-divider {
+          display: none; /* Hides dividers on mobile */
+        }
+        .hero-pill-strip {
+          height: 380px;
+        }
+      }
+
+      @media (max-width: 640px) {
+        .hero-pill-strip {
+          height: 320px;
+        }
+      }
+      /*<!-- To facilitate tailwindcss to allow proper functionality --> */
+      
     </style>
+    
+
   </head>
   <body>
     <!-- nav + footer injected by layout.js -->
@@ -491,114 +673,199 @@
       <a href="contact.html#booking">Book now →</a>
     </div>
 
-    <!-- ===== HERO ===== -->
-    <section class="hero">
-      <div class="hero-slides" aria-hidden="true">
-        <div
-          class="hero-slide active"
-          style="
-            background-image: url(&quot;images/hero-slide-1.png&quot;);
-            background-size: cover;
-            background-position: center;
-          "
-        ></div>
-        <div
-          class="hero-slide"
-          style="
-            background-image: url(&quot;images/hero-slide-2.png&quot;);
-            background-size: cover;
-            background-position: center;
-          "
-        ></div>
-        <div
-          class="hero-slide"
-          style="
-            background-image: url(&quot;images/hero-slide-3.png&quot;);
-            background-size: cover;
-            background-position: center;
-          "
-        ></div>
-        <div
-          class="hero-slide"
-          style="
-            background-image: url(&quot;images/hero-slide-4.png&quot;);
-            background-size: cover;
-            background-position: center;
-          "
-        ></div>
-      </div>
-
-      <!-- Dark overlay for better text readability -->
-      <div
-        style="
-          position: absolute;
-          inset: 0;
-          background: rgba(0, 0, 0, 0.5);
-          z-index: 1;
-        "
-      ></div>
-
-      <!-- Floating stat pills (desktop) -->
-      <div class="hero-pills" aria-hidden="true">
-        <div class="hero-pill">
-          <div class="hp-num">500+</div>
-          <div class="hp-lbl">Customers</div>
-        </div>
-        <div class="hero-pill">
-          <div class="hp-num">4.9★</div>
-          <div class="hp-lbl">Rating</div>
-        </div>
-        <div class="hero-pill">
-          <div class="hp-num">8hr</div>
-          <div class="hp-lbl">Same Day</div>
-        </div>
-      </div>
-
-      <div class="hero-dots" aria-label="Carousel navigation">
-        <span class="hero-dot active" aria-label="Slide 1"></span>
-        <span class="hero-dot" aria-label="Slide 2"></span>
-        <span class="hero-dot" aria-label="Slide 3"></span>
-        <span class="hero-dot" aria-label="Slide 4"></span>
-      </div>
-
-      <div
-        class="container hero-content"
-        style="position: relative; z-index: 2"
-      >
-        <div class="hero-live">
-          <span class="dot"></span> Open Daily · 8AM–8PM · Free Delivery
-        </div>
-        <h1 class="display-xl">
-          Maisha Laundry –<br /><span>Fresh. Clean.</span><br />Delivered.
-        </h1>
-        <p class="hero-sub">
-          Free pickup &amp; delivery across Kampala. Your clothes come back
-          spotless, neatly folded, and smelling amazing — same day or express.
-        </p>
-        <div class="hero-btns">
-          <a href="contact.html#booking" class="btn btn-green btn-lg"
-            >🚐 Request Pickup</a
+    <!-- ===== HERO SECTION ===== -->
+     <!-- Hero Section -->
+    <section
+      class="relative pt-32 pb-section-padding px-margin-mobile md:px-gutter max-w-container-max mx-auto overflow-hidden"
+    >
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+        <!-- Left Content -->
+        <div class="z-10">
+          <h1
+            class="font-headline-lg-mobile md:font-headline-xl text-headline-lg-mobile md:text-headline-xl text-on-surface mb-6"
           >
-          <a href="tel:+256780603561" class="btn btn-white btn-lg"
-            >📞 Call Us Now</a
+            <span class="text-primary-container">Maisha Laundry</span> and dry
+            cleaning service
+            <span class="text-primary-container">Delivered in 24h.</span>
+          </h1>
+          <p
+            class="font-body-lg text-body-lg text-on-surface-variant mb-4 max-w-lg"
           >
-          <a
-            href="https://wa.me/256780603561?text=Hello%20Maisha%20Laundry!%20I%27d%20like%20to%20book%20a%20pickup."
-            target="_blank"
-            rel="noopener"
-            class="btn btn-whatsapp btn-lg"
+            Maisha Laundry takes laundry off your to-do list with fast, reliable
+            pickup and doorstep delivery service.
+          </p>
+          <p
+            class="font-label-bold text-label-bold text-tertiary-container mb-10 flex items-center gap-2"
           >
-            <i class="fab fa-whatsapp"></i> WhatsApp
-          </a>
+            <span class="material-symbols-outlined">stars</span>
+            Get 10% off your first order
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 mb-16">
+            <button
+              class="bg-primary-container text-on-primary-fixed px-8 py-4 rounded-lg font-label-bold text-label-bold shadow-lg hover:shadow-primary-container/20 transition-all flex items-center justify-center gap-2"
+            >
+              Book a Pickup
+              <span class="material-symbols-outlined">arrow_forward</span>
+            </button>
+            <button
+              class="border-2 border-primary-container text-primary px-8 py-4 rounded-lg font-label-bold text-label-bold hover:bg-primary-container/10 transition-all flex items-center justify-center"
+            >
+              How it works
+            </button>
+          </div>
+          <!-- Stats Row -->
+          <div class="flex items-center gap-8 md:gap-12 stats-row-mobile">
+            <div>
+              <div class="font-stat-value text-stat-value text-on-surface">
+                10+
+              </div>
+              <div
+                class="font-label-bold text-label-bold text-on-surface-variant opacity-70"
+              >
+                Years Experience
+              </div>
+            </div>
+            <div class="w-px h-10 bg-outline-variant"></div>
+            <div>
+              <div class="font-stat-value text-stat-value text-on-surface">
+                8K+
+              </div>
+              <div
+                class="font-label-bold text-label-bold text-on-surface-variant opacity-70"
+              >
+                Customers
+              </div>
+            </div>
+            <div class="w-px h-10 bg-outline-variant"></div>
+            <div>
+              <!-- 5 Star Ratings with REAL STAR ICONS (filled) -->
+              <div class="flex items-center gap-1">
+                <span class="font-stat-value text-stat-value text-on-surface"
+                  >5</span
+                >
+                <span
+                  class="material-symbols-outlined star-icon-filled text-[28px] md:text-[28px]"
+                  >star</span
+                >
+                <span
+                  class="material-symbols-outlined star-icon-filled text-[28px] md:text-[28px]"
+                  >star</span
+                >
+                <span
+                  class="material-symbols-outlined star-icon-filled text-[28px] md:text-[28px]"
+                  >star</span
+                >
+                <span
+                  class="material-symbols-outlined star-icon-filled text-[28px] md:text-[28px]"
+                  >star</span
+                >
+                <span
+                  class="material-symbols-outlined star-icon-filled text-[28px] md:text-[28px]"
+                  >star</span
+                >
+              </div>
+              <div
+                class="font-label-bold text-label-bold text-on-surface-variant opacity-70 mt-1"
+              >
+                Ratings
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="hero-trust">
-          <div class="ti-item">⚡ Same Day Service</div>
-          <div class="ti-item">🚐 Free Pickup &amp; Delivery</div>
-          <div class="ti-item">⭐ 4.9/5 Rating</div>
-          <div class="ti-item">🔒 Insured &amp; Trusted</div>
+        <!-- Right Visual (Vertical Pill Layout) -->
+        <div
+          class="image-strip-container relative flex justify-center lg:justify-end items-center gap-4 h-[500px] md:h-[600px]"
+        >
+          <div
+            class="w-1/5 h-3/4 bg-surface-container-high rounded-full overflow-hidden image-strip-hover"
+          >
+            <img
+              alt=""
+              class="w-full h-full object-cover"
+              data-alt="A vertical pill-shaped slice of a photograph showing a brightly lit professional laundry facility. The image captures clean white washing machines and stacks of fresh linens in the background, bathed in soft, natural light to emphasize cleanliness and efficiency. The overall aesthetic is modern, airy, and professional, aligning with the brand's trustworthy identity."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAekthvX6XG2a1JDFRsjHTPzC29A69i4xL7T0ADENlPGX1RfWnuGD5dlAY3uHohkmcZc1AGlnsYnijPioW6BV7ZUJA5TCOLSgzrZavto6GMPkQ0mmKA0zwGlT5YbrLwLuEpuI1iJYoN8Wu5o5_JAhqb7-2Pu2xz2WHNn7J0fTL0H_gOJpV3HERbt3urB0owC3hPpiZSzsisA55cJD_j9trT4FtENF8eHDg_6Jf9qeJljb4PQ3L38guOVg"
+            />
+          </div>
+          <div
+            class="w-1/4 h-[90%] bg-surface-container-high rounded-full overflow-hidden image-strip-hover mt-[-10%]"
+          >
+            <img
+              alt="Professional laundry service provider"
+              class="w-full h-full object-cover"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-pfB3gIrl5UKetRNUk6WsExVIGMRoubS_gIfMv2qqEENvrP9qwMay9ub1EbA76js-VgHWHFZ147CQ3UMTGM1Q2l2rxPsx6MUF2CyrdEpJfZjxghnVfoC9pxGDiuSPiHV15_RPij9ahrQ6uDyRYGOvFVVyCixUzoeYsNnm3V15Tfx5kFHo21dtYLwoRnBl1K4c8WRluAIAPX4uXwE7xCdYbXk2DbvaOyWHt_3RFkHzKgSp3kHYcNz9wQ"
+            />
+          </div>
+          <div
+            class="w-1/4 h-full bg-surface-container-high rounded-full overflow-hidden image-strip-hover mt-[-5%]"
+          >
+            <img
+              alt=""
+              class="w-full h-full object-cover"
+              data-alt="A central vertical pill-shaped image segment showing a perfectly folded stack of vibrant cyan and deep navy towels. The texture of the high-quality fabric is visible, suggesting premium care and soft comfort. The lighting creates subtle shadows that give depth to the folds, reinforcing the meticulous attention to detail provided by the laundry service."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAJ8Ofgm6SmUZMvXK3P11FePOfXvZdZ2vSaR1kFYHRhEYjYm_M61fFyTLViSNVJ8FHogQAccP-DxMZKlUjbNGY5F6WrBeTj8urae6NuvEA5V6Z65PovUYR285ejYqmR3oA2m-qRMzKoHo2JDQfcDenjuGIlWfBiW3shci3uhSVgjKEabIXiv7eqc7Up8147n5RVVroJ8wiGodLmDvkrL05zxolSZL_gCrKl7eAcy40XAx0u3CmYS8U_hA"
+            />
+          </div>
+          <div
+            class="w-1/5 h-[85%] bg-surface-container-high rounded-full overflow-hidden image-strip-hover mt-[5%]"
+          >
+            <img
+              alt=""
+              class="w-full h-full object-cover"
+              data-alt="A vertical slice of an image featuring a modern industrial laundry setting. The focus is on the organized, systematic nature of the business, with clear lines and a palette of whites and greys. A professional worker's hands are visible, expertly handling a garment, representing the skilled craftsmanship behind the dry cleaning process. The atmosphere is quiet, focused, and impeccably clean."
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtRxzeaDO-soWafwSfKF_9dbJ51C7s5ThBSWEjJWHi_s6L-3vsoLkDUt3IZhkdOGDwcOJ52QxSaAPwCTXsCnGhH1Xjj9BM9GDywIfJMr-nlgolDHWJUmF0hH0IhI-09iBMdYe3DsRPboTLGz0vkmB5whv9m3aybY7c0z9qKZexn-YNyIm3bLMJNNMo3IyyP5zxi5QtcPA-3m6tMKWifVUqkfBr0vh1gkOR8k74NQRERI8y0n1UND52Nw"
+            />
+          </div>
         </div>
       </div>
     </section>
+    <!-- Carousel Section -->
+
+    <script>
+      // Navigation functionality for buttons
+      document.addEventListener("DOMContentLoaded", function () {
+        // "Book a Pickup" button - goes to contact page (booking form)
+        const bookButtons = document.querySelectorAll("button");
+        const bookPickupBtn = Array.from(bookButtons).find(
+          (btn) =>
+            btn.textContent.includes("Book a Pickup") ||
+            btn.textContent.includes("Book"),
+        );
+
+        if (bookPickupBtn) {
+          bookPickupBtn.addEventListener("click", function (e) {
+            window.location.href = "contact.html";
+          });
+        }
+
+        // "How it works" button - scrolls to how-it-works section or goes to about page
+        const howItWorksBtn = Array.from(bookButtons).find((btn) =>
+          btn.textContent.includes("How it works"),
+        );
+
+        if (howItWorksBtn) {
+          howItWorksBtn.addEventListener("click", function (e) {
+            // Check if there's a how-it-works section on the page
+            const howItWorksSection = document.getElementById("how-it-works");
+            if (howItWorksSection) {
+              howItWorksSection.scrollIntoView({ behavior: "smooth" });
+            } else {
+              // Fallback: go to about page
+              window.location.href = "about.html";
+            }
+          });
+        }
+
+        // Optional: Add "Get 10% off" promo click handler
+        const promoElement = document.querySelector(".flex.items-center.gap-2");
+        if (promoElement && promoElement.textContent.includes("10% off")) {
+          promoElement.style.cursor = "pointer";
+          promoElement.addEventListener("click", function () {
+            window.location.href = "contact.html?promo=first10";
+          });
+        }
+      });
+    </script>
+    <!-- ===== End of hero section ===== -->
     <!-- ===== STATS BAR ===== -->
     <div class="stats-bar" role="region" aria-label="Key stats">
       <div class="container">
