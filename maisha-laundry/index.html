@@ -46,8 +46,8 @@
     />
 
     <!-- To facilitate tailwindcss to allow proper functionality -->
-     <!-- to facilitate tailwindcss to allow proper functionality -->
-     <script id="tailwind-config">
+    <!-- to facilitate tailwindcss to allow proper functionality -->
+    <script id="tailwind-config">
       tailwind.config = {
         darkMode: "class",
         theme: {
@@ -156,8 +156,6 @@
       };
     </script>
     <!-- to facilitate tailwindcss to allow proper functionality -->
-
-
 
     <style>
       /* ===== HOME PAGE EXTRA STYLES ===== */
@@ -608,8 +606,8 @@
           max-width: 280px;
         }
       }
-       /*<!-- To facilitate tailwindcss to allow proper functionality --> */
-       .material-symbols-outlined {
+      /*<!-- To facilitate tailwindcss to allow proper functionality --> */
+      .material-symbols-outlined {
         font-variation-settings:
           "FILL" 0,
           "wght" 400,
@@ -657,10 +655,7 @@
         }
       }
       /*<!-- To facilitate tailwindcss to allow proper functionality --> */
-      
     </style>
-    
-
   </head>
   <body>
     <!-- nav + footer injected by layout.js -->
@@ -674,7 +669,7 @@
     </div>
 
     <!-- ===== HERO SECTION ===== -->
-     <!-- Hero Section -->
+    <!-- Hero Section -->
     <section
       class="relative pt-32 pb-section-padding px-margin-mobile md:px-gutter max-w-container-max mx-auto overflow-hidden"
     >
@@ -1053,57 +1048,10 @@
       </div>
     </section>
 
-    <!-- ===== HOW IT WORKS ===== -->
-    <section class="section-pad">
-      <div class="container">
-        <div class="section-header reveal">
-          <div class="section-label">🔄 How It Works</div>
-          <h2 class="display-md">4 Easy Steps to Clean Clothes</h2>
-          <p>
-            As simple as possible — you don't even need to leave your house.
-          </p>
-        </div>
-        <div class="steps-grid">
-          <div class="step-card reveal reveal-delay-1">
-            <div class="step-number">01</div>
-            <h4>🛍️ Bag It Up</h4>
-            <p>
-              Put all dirty clothes in any bag — no special packaging needed.
-            </p>
-          </div>
-          <div class="step-card reveal reveal-delay-2">
-            <div class="step-number">02</div>
-            <h4>📞 We Pick Up</h4>
-            <p>
-              Schedule free pickup via WhatsApp, call, or the form below. We
-              come to you.
-            </p>
-          </div>
-          <div class="step-card reveal reveal-delay-3">
-            <div class="step-number">03</div>
-            <h4>🧼 We Clean</h4>
-            <p>
-              Wash, dry, iron, or dry clean — with premium products and expert
-              care.
-            </p>
-          </div>
-          <div class="step-card reveal reveal-delay-4">
-            <div class="step-number">04</div>
-            <h4>🚪 We Deliver</h4>
-            <p>
-              Fresh, folded clothes delivered back to your door. Pay on
-              delivery!
-            </p>
-          </div>
-        </div>
-        <div style="text-align: center; margin-top: 48px" class="reveal">
-          <a href="contact.html#booking" class="btn btn-primary btn-lg"
-            >📅 Schedule Pickup Now</a
-          >
-        </div>
-      </div>
-    </section>
+    <!-- ===== HOW IT WORKS SECTION (LOADED FROM works.html) ===== -->
+    <div id="how-it-works-container" class="how-it-works-wrapper"></div>
 
+   
     <!-- ===== TESTIMONIALS ===== -->
     <section class="section-pad why-bg">
       <div class="container">
@@ -1554,6 +1502,138 @@
         </div>
       </div>
     </section>
+
+    <!-- ===== How it works code -->
+    <script>
+      // Fetch and include works.html content
+      document.addEventListener("DOMContentLoaded", function () {
+        const howItWorksContainer = document.getElementById(
+          "how-it-works-container",
+        );
+
+        if (howItWorksContainer) {
+          fetch("works.html")
+            .then((response) => {
+              if (!response.ok) {
+                throw new Error(`HTTP error! status: ${response.status}`);
+              }
+              return response.text();
+            })
+            .then((html) => {
+              // Extract only the main content we want (the How It Works section)
+              const parser = new DOMParser();
+              const doc = parser.parseFromString(html, "text/html");
+
+              // Get the main content from works.html (the <main> tag content)
+              const mainContent = doc.querySelector("main");
+
+              if (mainContent) {
+                // Clean up any conflicting classes/styles
+                mainContent.classList.add("loaded-works-content");
+                howItWorksContainer.appendChild(mainContent);
+
+                // Re-initialize the step functionality for the loaded content
+                initializeWorksSteps();
+              } else {
+                // Fallback: just show a message
+                howItWorksContainer.innerHTML =
+                  '<div class="container text-center py-12">Unable to load content. <a href="works.html" class="text-primary">View How It Works →</a></div>';
+              }
+            })
+            .catch((error) => {
+              console.error("Error loading works.html:", error);
+              howItWorksContainer.innerHTML =
+                '<div class="container text-center py-12">Unable to load content. <a href="works.html" class="text-primary">View How It Works →</a></div>';
+            });
+        }
+      });
+
+      function initializeWorksSteps() {
+        // Re-create the step functionality for the dynamically loaded content
+        if (typeof window.goToStep === "undefined") {
+          // Define the function if it doesn't exist
+          window.goToStep = function (stepNumber) {
+            const steps = document.querySelectorAll(
+              "#how-it-works-container .step-content",
+            );
+            const buttons = document.querySelectorAll(
+              "#how-it-works-container .step-btn",
+            );
+
+            if (!steps.length) return;
+
+            steps.forEach((step) => {
+              step.classList.add("opacity-0", "hidden");
+              step.classList.remove("opacity-100");
+            });
+
+            buttons.forEach((btn) => {
+              btn.classList.remove(
+                "bg-secondary",
+                "text-white",
+                "border-secondary",
+              );
+              btn.classList.add(
+                "border-outline-variant",
+                "text-outline-variant",
+              );
+            });
+
+            const activeStep = document.querySelector(
+              `#how-it-works-container #step-0${stepNumber}`,
+            );
+            if (activeStep) {
+              activeStep.classList.remove("hidden");
+              setTimeout(() => {
+                activeStep.classList.remove("opacity-0");
+                activeStep.classList.add("opacity-100");
+              }, 10);
+            }
+
+            const activeButton = document.querySelector(
+              `#how-it-works-container .step-btn[data-step="${stepNumber}"]`,
+            );
+            if (activeButton) {
+              activeButton.classList.add(
+                "bg-secondary",
+                "text-white",
+                "border-secondary",
+              );
+              activeButton.classList.remove(
+                "border-outline-variant",
+                "text-outline-variant",
+              );
+            }
+          };
+        }
+
+        // Initialize the first step
+        setTimeout(() => {
+          if (typeof window.goToStep === "function") {
+            window.goToStep(1);
+          }
+
+          // Set up auto-rotation
+          let currentStep = 1;
+          const totalSteps = 4;
+          let rotationInterval = setInterval(() => {
+            currentStep = currentStep === totalSteps ? 1 : currentStep + 1;
+            if (typeof window.goToStep === "function") {
+              window.goToStep(currentStep);
+            }
+          }, 5000);
+
+          // Pause rotation on button click
+          document
+            .querySelectorAll("#how-it-works-container .step-btn")
+            .forEach((btn) => {
+              btn.addEventListener("click", () => {
+                clearInterval(rotationInterval);
+              });
+            });
+        }, 100);
+      }
+    </script>
 
     <script src="js/layout.js"></script>
     <script src="js/main.js"></script>
