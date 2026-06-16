@@ -656,15 +656,188 @@
       }
       /*<!-- To facilitate tailwindcss to allow proper functionality --> */
     </style>
+    <!-- Styles specific to the "Why Choose Us" page --->
+    <style>
+      /* Add your CSS styles here */
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      .why-choose-us {
+        background: #003b8e;
+        color: white;
+        padding: 80px 30px;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: auto;
+      }
+
+      .header {
+        display: flex;
+        justify-content: space-between;
+        gap: 60px;
+        margin-bottom: 80px;
+        flex-wrap: wrap;
+      }
+
+      .left {
+        flex: 1;
+        min-width: 300px;
+      }
+
+      .right {
+        flex: 0 0 350px;
+      }
+
+      .subtitle {
+        color: #baf470;
+        font-size: 13px;
+        font-weight: 700;
+        letter-spacing: 2px;
+      }
+
+      .left h2 {
+        font-size: 48px;
+        line-height: 1.2;
+        margin-top: 15px;
+        margin-bottom: 0;
+      }
+
+      .right p {
+        color: rgba(255, 255, 255, 0.85);
+        line-height: 1.8;
+      }
+
+      .features {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
+      }
+
+      .curve {
+        position: absolute;
+        top: -30px;
+        left: 0;
+        width: 100%;
+        height: 180px;
+        z-index: 0;
+      }
+
+      .curve path {
+        fill: none;
+        stroke: #baf470;
+        stroke-width: 2;
+        stroke-dasharray: 8 8;
+        opacity: 0.4;
+      }
+
+      .feature {
+        text-align: center;
+        position: relative;
+        z-index: 2;
+      }
+
+      .feature-1,
+      .feature-3 {
+        margin-top: 20px;
+      }
+
+      .feature-2,
+      .feature-4 {
+        margin-top: 70px;
+      }
+
+      .icon-circle {
+        width: 80px;
+        height: 80px;
+        background: #baf470;
+        border-radius: 50%;
+        margin: 0 auto 25px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        font-size: 34px;
+        color: #003b8e;
+
+        box-shadow: 0 0 0 5px rgba(186, 244, 112, 0.25);
+
+        transition: 0.3s;
+      }
+
+      .feature:hover .icon-circle {
+        transform: translateY(-8px) scale(1.08);
+      }
+
+      .feature h3 {
+        color: #baf470;
+        font-size: 22px;
+        margin-bottom: 12px;
+      }
+
+      .feature p {
+        color: rgba(255, 255, 255, 0.85);
+        line-height: 1.6;
+        font-size: 15px;
+      }
+      @media (max-width: 992px) {
+        .features {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        .feature {
+          margin-top: 0 !important;
+        }
+
+        .curve {
+          display: none;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .header {
+          flex-direction: column;
+        }
+
+        .left h2 {
+          font-size: 36px;
+        }
+
+        .features {
+          grid-template-columns: 1fr;
+        }
+
+        .right {
+          flex: 1;
+        }
+      }
+    </style>
+    <script>
+      document.querySelectorAll(".icon-circle").forEach((icon) => {
+        icon.addEventListener("mouseenter", () => {
+          icon.style.transform = "translateY(-8px) scale(1.08)";
+        });
+
+        icon.addEventListener("mouseleave", () => {
+          icon.style.transform = "";
+        });
+      });
+    </script>
+    <!-- Styles specific to the why choose section end -->
   </head>
   <body>
     <!-- nav + footer injected by layout.js -->
 
     <!-- ===== PROMO BAR ===== -->
     <div class="promo-bar">
-      🎉 First Wash: <span>4,000/= per kg</span> (reg 7,000/=) &nbsp;•&nbsp;
-      Weekend Basket Wash: <span>29,900/= up to 5kg</span> &nbsp;•&nbsp; Free
-      Pickup everywhere in Kampala!
+      First Wash: <span>4,000/= per kg</span> (reg 7,000/=) &nbsp;•&nbsp;
+      Weekend Basket Wash: <span>29,900/= </span> &nbsp;•&nbsp; Free Pickup
+      everywhere in Kampala!
       <a href="contact.html#booking">Book now →</a>
     </div>
 
@@ -712,7 +885,7 @@
           <div class="flex items-center gap-8 md:gap-12 stats-row-mobile">
             <div>
               <div class="font-stat-value text-stat-value text-on-surface">
-                10+
+                2+
               </div>
               <div
                 class="font-label-bold text-label-bold text-on-surface-variant opacity-70"
@@ -723,7 +896,7 @@
             <div class="w-px h-10 bg-outline-variant"></div>
             <div>
               <div class="font-stat-value text-stat-value text-on-surface">
-                8K+
+                2K+
               </div>
               <div
                 class="font-label-bold text-label-bold text-on-surface-variant opacity-70"
@@ -866,11 +1039,11 @@
       <div class="container">
         <div class="stats-grid">
           <div class="stat-item">
-            <h3 data-count="500" data-suffix="+">0+</h3>
+            <h3 data-count="2000" data-suffix="+">0+</h3>
             <p>Happy Customers</p>
           </div>
           <div class="stat-item">
-            <h3 data-count="1200" data-suffix="+">0+</h3>
+            <h3 data-count="10000+" data-suffix="+">0+</h3>
             <p>Orders Completed</p>
           </div>
           <div class="stat-item">
@@ -904,7 +1077,7 @@
               Machine wash, premium detergent, neatly folded and fresh-scented.
             </p>
             <div style="margin-top: 16px">
-              <span class="badge badge-blue">From 4,000/= per kg</span>
+              <span class="badge badge-blue">From 7,000/= per kg</span>
             </div>
           </div>
           <div class="sq-card reveal reveal-delay-2">
@@ -942,9 +1115,9 @@
           </div>
         </div>
         <div style="text-align: center; margin-top: 40px" class="reveal">
-          <a href="services.html" class="btn btn-secondary btn-lg"
-            >➕ View All Services</a
-          >
+          <a href="services.html" class="btn btn-secondary btn-lg">
+            View All Services 👉
+          </a>
         </div>
       </div>
     </section>
@@ -959,13 +1132,13 @@
             </div>
             <h3>New Customer Deal: Only 4,000/= per kg!</h3>
             <p>
-              Regular price 7,000/=. New customers only.<br />
-              Weekend Basket Wash — 30,000/= for up to 5 kg of mixed laundry.
+              Regular price 7,000/=.<br />
+              Weekend Basket Wash — 29,000/= of mixed laundry.
             </p>
           </div>
           <div style="flex-shrink: 0">
-            <a href="contact.html#booking" class="btn btn-white btn-lg"
-              >🚀 Claim This Offer</a
+            <a href="contact.html#booking" class="btn btn-white btn-lg">
+              Claim This Offer</a
             >
           </div>
         </div>
@@ -973,76 +1146,69 @@
     </section>
 
     <!-- ===== WHY CHOOSE US ===== -->
-    <section class="section-pad why-bg">
+    <section class="why-choose-us">
       <div class="container">
-        <div class="section-header reveal">
-          <div class="section-label">💎 Why Maisha?</div>
-          <h2 class="display-md">The Maisha Difference</h2>
-          <p>
-            We don't just wash clothes — we take care of what you care about
-            most.
-          </p>
+        <div class="header">
+          <div class="left">
+            <span class="subtitle">[ WHY CHOOSE US ]</span>
+
+            <h2>Maisha Laundry Service Experience the Difference</h2>
+          </div>
+
+          <div class="right">
+            <p style="padding: 0 2%">
+              Maisha Laundry primary aim is to provide modern laundry and dry
+              cleaning services tailored to customers' needs. Providing a
+              flexible and cost-effective service, while maintaining the highest
+              level of quality is our goal.
+            </p>
+          </div>
         </div>
-        <div class="grid-2">
-          <div class="why-item reveal reveal-delay-1">
-            <div class="why-icon">🚐</div>
-            <div>
-              <h4>Free Pickup &amp; Delivery</h4>
-              <p>
-                No extra cost, no hidden fees. We come to your door anywhere in
-                Kampala and deliver back freshly done.
-              </p>
-            </div>
+
+        <div class="features">
+          <svg class="curve" viewBox="0 0 1200 200">
+            <path d="M150,120 Q300,180 450,120 T750,120 T1050,120" />
+          </svg>
+
+          <div class="feature feature-1">
+            <div class="icon-circle">🧺</div>
+
+            <h3>Cleanest Service</h3>
+
+            <p>
+              Experience the freshest, cleanest laundry— because your clothes
+              deserve the best.
+            </p>
           </div>
-          <div class="why-item reveal reveal-delay-2">
-            <div class="why-icon">⚡</div>
-            <div>
-              <h4>Same Day Service</h4>
-              <p>
-                Drop off in the morning, get your clothes back by evening.
-                Express service always available.
-              </p>
-            </div>
+
+          <div class="feature feature-2">
+            <div class="icon-circle">⚡</div>
+
+            <h3>Super Fast Service</h3>
+
+            <p>
+              Lightning-fast laundry service—fresh, clean clothes at your
+              doorstep in no time.
+            </p>
           </div>
-          <div class="why-item reveal reveal-delay-1">
-            <div class="why-icon">👕</div>
-            <div>
-              <h4>Expert Stain Removal</h4>
-              <p>
-                Special care for kids' clothes, delicate fabrics, and tough
-                stains — every item treated individually.
-              </p>
-            </div>
+
+          <div class="feature feature-3">
+            <div class="icon-circle">👕</div>
+
+            <h3>Convenience</h3>
+
+            <p>
+              Laundry made effortless—pickup, cleaning, and delivery at your
+              convenience.
+            </p>
           </div>
-          <div class="why-item reveal reveal-delay-2">
-            <div class="why-icon">🌸</div>
-            <div>
-              <h4>Amazing Fresh Scent</h4>
-              <p>
-                Premium detergents and fabric softeners leave clothes smelling
-                lovely and fresh for longer.
-              </p>
-            </div>
-          </div>
-          <div class="why-item reveal reveal-delay-1">
-            <div class="why-icon">📦</div>
-            <div>
-              <h4>Perfect Neat Folding</h4>
-              <p>
-                Professionally pressed, sorted, and folded — like a personal
-                organizer for your wardrobe.
-              </p>
-            </div>
-          </div>
-          <div class="why-item reveal reveal-delay-2">
-            <div class="why-icon">🕒</div>
-            <div>
-              <h4>Open Daily 8AM–8PM</h4>
-              <p>
-                Including weekends and public holidays. Always here when you
-                need us most.
-              </p>
-            </div>
+
+          <div class="feature feature-4">
+            <div class="icon-circle">💵</div>
+
+            <h3>Affordable Prices</h3>
+
+            <p>Premium laundry service at prices that fit your budget.</p>
           </div>
         </div>
       </div>
@@ -1051,7 +1217,6 @@
     <!-- ===== HOW IT WORKS SECTION (LOADED FROM works.html) ===== -->
     <div id="how-it-works-container" class="how-it-works-wrapper"></div>
 
-   
     <!-- ===== TESTIMONIALS ===== -->
     <section class="section-pad why-bg">
       <div class="container">
@@ -1185,7 +1350,8 @@
                   target="_blank"
                   rel="noopener"
                   class="btn btn-whatsapp btn-sm"
-                  >💬 WhatsApp</a
+                >
+                  WhatsApp</a
                 >
               </div>
             </div>
@@ -1200,7 +1366,7 @@
            All bookings will then arrive at maishadrycleaners@gmail.com
       -->
           <div class="bk-card reveal">
-            <h3>🧺 Book a Pickup</h3>
+            <h3>Book a Pickup</h3>
             <form
               class="maisha-form"
               action="https://formspree.io/f/YOUR_FORM_ID"
@@ -1251,7 +1417,7 @@
                   type="text"
                   id="address"
                   name="address"
-                  placeholder="e.g. Ntinda, near Total petrol station"
+                  placeholder="e.g. Kyebando near total petrol station"
                   required
                 />
               </div>
@@ -1328,9 +1494,9 @@
                 >💳 Payment Options (Pay on Delivery)</label
               >
               <div class="pay-opts">
-                <div class="pay-opt">📱 MTN Mobile Money</div>
-                <div class="pay-opt">📱 Airtel Money</div>
-                <div class="pay-opt">💵 Cash on Delivery</div>
+                <div class="pay-opt">MTN Mobile Money</div>
+                <div class="pay-opt">Airtel Money</div>
+                <div class="pay-opt">Cash on Delivery</div>
               </div>
 
               <button
@@ -1338,7 +1504,7 @@
                 class="btn btn-primary btn-lg"
                 style="width: 100%"
               >
-                ✅ Book Now &amp; Pay Later
+                ✅ Book Now
               </button>
             </form>
           </div>
@@ -1350,7 +1516,7 @@
     <section class="section-pad why-bg" id="faq">
       <div class="container">
         <div class="section-header reveal">
-          <div class="section-label">❓ FAQ</div>
+          <div class="section-label"> FAQ</div>
           <h2 class="display-md">Frequently Asked Questions</h2>
           <p>
             Everything you need to know. Can't find your answer? WhatsApp us!
@@ -1359,7 +1525,7 @@
         <div style="max-width: 760px; margin: 0 auto">
           <div class="faq-item reveal">
             <div class="faq-question">
-              How long does it take? <span class="icon">+</span>
+              How long does it take? <span class="icon">▼</span>
             </div>
             <div class="faq-answer">
               Same day service if picked up by 9 AM — back by evening. Express
@@ -1370,7 +1536,7 @@
           <div class="faq-item reveal">
             <div class="faq-question">
               Do you pick up from anywhere in Kampala?
-              <span class="icon">+</span>
+              <span class="icon">▼</span>
             </div>
             <div class="faq-answer">
               Yes! Free pickup and delivery across all of Kampala — Ntinda,
@@ -1380,7 +1546,7 @@
           </div>
           <div class="faq-item reveal">
             <div class="faq-question">
-              How do I pay? <span class="icon">+</span>
+              How do I pay? <span class="icon">▼</span>
             </div>
             <div class="faq-answer">
               MTN Mobile Money, Airtel Money, or cash on delivery. No upfront
@@ -1390,7 +1556,7 @@
           </div>
           <div class="faq-item reveal">
             <div class="faq-question">
-              What if my clothes get damaged? <span class="icon">+</span>
+              What if my clothes get damaged? <span class="icon">▼</span>
             </div>
             <div class="faq-answer">
               We take the utmost care with every garment. We are insured and
@@ -1401,7 +1567,7 @@
           <div class="faq-item reveal">
             <div class="faq-question">
               Do you clean traditional clothes like Gomesi and Kanzu?
-              <span class="icon">+</span>
+              <span class="icon">▼</span>
             </div>
             <div class="faq-answer">
               Absolutely! We specialize in traditional Ugandan attire including
@@ -1411,7 +1577,7 @@
           </div>
           <div class="faq-item reveal">
             <div class="faq-question">
-              Do I need to provide detergent? <span class="icon">+</span>
+              Do I need to provide detergent? <span class="icon">▼</span>
             </div>
             <div class="faq-answer">
               No! We use premium detergents, fabric softeners, and specialist
@@ -1421,7 +1587,7 @@
           </div>
           <div class="faq-item reveal">
             <div class="faq-question">
-              What is the Basket Wash package? <span class="icon">+</span>
+              What is the Basket Wash package? <span class="icon">▼</span>
             </div>
             <div class="faq-answer">
               Our most popular deal! Fill any standard laundry basket with mixed
@@ -1432,7 +1598,7 @@
           <div class="faq-item reveal">
             <div class="faq-question">
               Are you open on weekends and public holidays?
-              <span class="icon">+</span>
+              <span class="icon">▼</span>
             </div>
             <div class="faq-answer">
               Yes! Every day — Monday through Sunday including all public
@@ -1442,7 +1608,7 @@
           </div>
           <div class="faq-item reveal">
             <div class="faq-question">
-              How do I schedule a pickup? <span class="icon">+</span>
+              How do I schedule a pickup? <span class="icon">▼</span>
             </div>
             <div class="faq-answer">
               Three ways: (1) Use the booking form above, (2) Call us on 0780
@@ -1452,7 +1618,7 @@
           </div>
           <div class="faq-item reveal">
             <div class="faq-question">
-              Can I get a quote before booking? <span class="icon">+</span>
+              Can I get a quote before booking? <span class="icon">▼</span>
             </div>
             <div class="faq-answer">
               Yes! Use the price estimator in the booking form above, or
@@ -1494,10 +1660,10 @@
             target="_blank"
             rel="noopener"
             class="btn btn-whatsapp btn-lg"
-            >💬 WhatsApp Us</a
+            ><i class="fa-brands fa-whatsapp"></i> WhatsApp</a
           >
           <a href="contact.html#booking" class="btn btn-green btn-lg"
-            >🧺 Book Pickup Online</a
+            ><i class="fa-solid fa-calendar-check"></i> Book Pickup Online</a
           >
         </div>
       </div>
