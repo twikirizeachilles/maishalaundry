@@ -1,201 +1,575 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Maisha Laundry – Our Story | Kyebando, Kampala</title>
-  <meta name="description" content="Learn about Maisha Laundry, your trusted laundry partner in Kyebando and across Kampala. Quality, reliability, freshness since 2024."/>
-  <link rel="icon" type="image/png" sizes="32x32" href="images/logo1.png" />
-  <link rel="stylesheet" href="css/style.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  <style>
-    /* ===== ABOUT PAGE STYLES ===== */
-    .story-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center;}
-    .story-visual{position:relative;}
-    .story-main-card{background:var(--grad-accent);border-radius:var(--radius-xl);padding:60px 44px;text-align:center;color:#fff;position:relative;overflow:hidden;}
-    .story-main-card::before{content:'🧺';position:absolute;top:-10px;right:-8px;font-size:9rem;opacity:.1;}
-    .story-big-icon{font-size:5rem;display:block;margin-bottom:20px;}
-    .story-main-card h3{color:#fff;font-size:1.6rem;margin-bottom:10px;}
-    .story-main-card p{color:rgba(255,255,255,.8);font-size:1.05rem;}
-    .story-badge{position:absolute;bottom:-18px;right:-18px;background:var(--green);color:#fff;padding:16px 22px;border-radius:var(--radius-lg);font-weight:700;font-size:.85rem;box-shadow:var(--shadow-md);border:3px solid var(--bg);}
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Maisha Laundry – Our Story | Kyebando, Kampala</title>
+    <meta
+      name="description"
+      content="Learn about Maisha Laundry, your trusted laundry partner in Kyebando and across Kampala. Quality, reliability, freshness since 2024."
+    />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logo1.png" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      /* ===== ABOUT PAGE STYLES ===== */
+      .story-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+        align-items: center;
+      }
+      .story-visual {
+        position: relative;
+      }
+      .story-main-card {
+        background: var(--grad-accent);
+        border-radius: var(--radius-xl);
+        padding: 60px 44px;
+        text-align: center;
+        color: #fff;
+        position: relative;
+        overflow: hidden;
+      }
+      .story-main-card::before {
+        content: "🧺";
+        position: absolute;
+        top: -10px;
+        right: -8px;
+        font-size: 9rem;
+        opacity: 0.1;
+      }
+      .story-big-icon {
+        font-size: 5rem;
+        display: block;
+        margin-bottom: 20px;
+      }
+      .story-main-card h3 {
+        color: #fff;
+        font-size: 1.6rem;
+        margin-bottom: 10px;
+      }
+      .story-main-card p {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 1.05rem;
+      }
+      .story-badge {
+        position: absolute;
+        bottom: -18px;
+        right: -18px;
+        background: var(--green);
+        color: #fff;
+        padding: 16px 22px;
+        border-radius: var(--radius-lg);
+        font-weight: 700;
+        font-size: 0.85rem;
+        box-shadow: var(--shadow-md);
+        border: 3px solid var(--bg);
+      }
 
-    .mv-grid{display:grid;grid-template-columns:1fr 1fr;gap:28px;}
-    .mv-card{border-radius:var(--radius-xl);padding:52px 44px;position:relative;overflow:hidden;}
-    .mv-vision{background:var(--grad-hero);}
-    .mv-mission{background:var(--grad-green);}
-    .mv-card h3{color:#fff;font-size:1.4rem;margin-bottom:16px;}
-    .mv-card p{color:rgba(255,255,255,.85);line-height:1.78;}
-    .mv-ghost{position:absolute;bottom:-12px;right:16px;font-size:7rem;opacity:.1;font-family:var(--font-display);font-weight:800;color:#fff;line-height:1;}
+      .mv-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+      }
+      .mv-card {
+        border-radius: var(--radius-xl);
+        padding: 52px 44px;
+        position: relative;
+        overflow: hidden;
+      }
+      .mv-vision {
+        background: var(--grad-hero);
+      }
+      .mv-mission {
+        background: var(--grad-green);
+      }
+      .mv-card h3 {
+        color: #fff;
+        font-size: 1.4rem;
+        margin-bottom: 16px;
+      }
+      .mv-card p {
+        color: rgba(255, 255, 255, 0.85);
+        line-height: 1.78;
+      }
+      .mv-ghost {
+        position: absolute;
+        bottom: -12px;
+        right: 16px;
+        font-size: 7rem;
+        opacity: 0.1;
+        font-family: var(--font-display);
+        font-weight: 800;
+        color: #fff;
+        line-height: 1;
+      }
 
-    .value-card{background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-xl);padding:36px;text-align:center;transition:all var(--transition);}
-    .value-card:hover{border-color:var(--blue-vivid);transform:translateY(-6px);box-shadow:var(--shadow-lg);}
-    .value-icon{font-size:2.5rem;margin-bottom:16px;display:block;}
-    .value-card h4{margin-bottom:10px;}
-    .value-card p{font-size:.9rem;color:var(--text-secondary);line-height:1.7;}
+      .value-card {
+        background: var(--surface);
+        border: 1.5px solid var(--border);
+        border-radius: var(--radius-xl);
+        padding: 36px;
+        text-align: center;
+        transition: all var(--transition);
+      }
+      .value-card:hover {
+        border-color: var(--blue-vivid);
+        transform: translateY(-6px);
+        box-shadow: var(--shadow-lg);
+      }
+      .value-icon {
+        font-size: 2.5rem;
+        margin-bottom: 16px;
+        display: block;
+      }
+      .value-card h4 {
+        margin-bottom: 10px;
+      }
+      .value-card p {
+        font-size: 0.9rem;
+        color: var(--text-secondary);
+        line-height: 1.7;
+      }
 
-    .serve-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-    .serve-item{display:flex;align-items:center;gap:12px;padding:18px 20px;background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-lg);font-weight:600;font-size:.92rem;transition:all var(--transition);}
-    .serve-item:hover{border-color:var(--blue-vivid);transform:translateX(4px);}
-    .serve-item .si{font-size:1.4rem;}
+      .serve-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+      }
+      .serve-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 18px 20px;
+        background: var(--surface);
+        border: 1.5px solid var(--border);
+        border-radius: var(--radius-lg);
+        font-weight: 600;
+        font-size: 0.92rem;
+        transition: all var(--transition);
+      }
+      .serve-item:hover {
+        border-color: var(--blue-vivid);
+        transform: translateX(4px);
+      }
+      .serve-item .si {
+        font-size: 1.4rem;
+      }
 
-    .diff-item{display:flex;align-items:center;gap:16px;padding:16px 0;border-bottom:1px solid var(--border);}
-    .diff-item:last-child{border-bottom:none;}
-    .diff-num{width:36px;height:36px;border-radius:50%;background:var(--grad-accent);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.82rem;flex-shrink:0;}
+      .diff-item {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 16px 0;
+        border-bottom: 1px solid var(--border);
+      }
+      .diff-item:last-child {
+        border-bottom: none;
+      }
+      .diff-num {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: var(--grad-accent);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 0.82rem;
+        flex-shrink: 0;
+      }
 
-    @media(max-width:900px){.story-grid,.mv-grid{grid-template-columns:1fr;}}
-    @media(max-width:640px){.serve-grid{grid-template-columns:1fr 1fr;}}
-    @media(max-width:420px){.serve-grid{grid-template-columns:1fr;}}
-  </style>
-</head>
-<body>
+      @media (max-width: 900px) {
+        .story-grid,
+        .mv-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      @media (max-width: 640px) {
+        .serve-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+      }
+      @media (max-width: 420px) {
+        .serve-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div style="padding-top: var(--nav-height)"></div>
 
-<div style="padding-top:var(--nav-height);"></div>
-
-<!-- PAGE HERO -->
-<section class="page-hero">
-  <div class="container" style="position:relative;z-index:1;">
-    <div class="section-label" style="background:rgba(255,255,255,.12);color:rgba(255,255,255,.9);border-color:rgba(255,255,255,.2);margin:0 auto 16px;">ℹ️ About Us</div>
-    <h1 class="display-lg">About Maisha Laundry &amp;<br>Dry Cleaners Ltd</h1>
-    <p>Your ultimate care for quality laundry solutions. We clean, you shine.</p>
-  </div>
-</section>
-
-<!-- COMPANY OVERVIEW -->
-<section class="section-pad">
-  <div class="container">
-    <div class="story-grid">
-      <div class="story-visual reveal">
-        <div class="story-main-card">
-          <span class="story-big-icon">🧺</span>
-          <h3>Kampala's Most Convenient Laundry</h3>
-          <p>Serving busy families, professionals &amp; students across the city since 2024.</p>
+    <!-- PAGE HERO -->
+    <section class="page-hero">
+      <div class="container" style="position: relative; z-index: 1">
+        <div
+          class="section-label"
+          style="
+            background: rgba(255, 255, 255, 0.12);
+            color: rgba(255, 255, 255, 0.9);
+            border-color: rgba(255, 255, 255, 0.2);
+            margin: 0 auto 16px;
+          "
+        >
+          About Us
         </div>
-        <div class="story-badge">✅ Trusted by 500+ Customers</div>
+        <h1 class="display-lg">
+          About Maisha Laundry &amp;<br />Dry Cleaners Ltd
+        </h1>
+        <p>
+          Your ultimate care for quality laundry solutions. We clean, you shine.
+        </p>
       </div>
-      <div class="reveal reveal-delay-2" style="padding-top:20px;">
-        <div class="section-label">🏢 Who We Are</div>
-        <h2 class="display-md" style="margin-bottom:18px;">More Than a Laundry Service</h2>
-        <p class="body-lg" style="color:var(--text-secondary);margin-bottom:20px;">Maisha Laundry and Dry Cleaners Ltd is a modern, customer-focused laundry service based in Kyebando, Kampala. We provide professional washing, dry cleaning, ironing, and shoe cleaning — all with free pickup and delivery across Kampala.</p>
-        <p style="color:var(--text-secondary);line-height:1.8;margin-bottom:32px;">We believe clean clothes should not be a chore. Whether you're a busy professional, a parent with young children, or a student, we take laundry off your plate so you can focus on what matters.</p>
-        <div style="display:flex;gap:12px;flex-wrap:wrap;">
-          <a href="contact.html#booking" class="btn btn-primary">🧺 Book a Pickup</a>
-          <a href="services.html" class="btn btn-secondary">View Services</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- OUR STORY -->
-<section class="section-pad" style="background:var(--surface-2);">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-label">📖 Our Story</div>
-      <h2 class="display-md">How It All Started</h2>
-    </div>
-    <div style="max-width:820px;margin:0 auto;" class="reveal">
-      <div style="background:var(--surface);border:1.5px solid var(--border);border-radius:var(--radius-xl);padding:52px;box-shadow:var(--shadow-sm);">
-        <div style="display:flex;align-items:center;gap:16px;margin-bottom:28px;">
-          <div style="width:56px;height:56px;background:var(--grad-accent);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0;">📅</div>
-          <div>
-            <span class="badge badge-blue">Founded 2024</span>
-            <h3 style="margin-top:6px;font-size:1.2rem;">Born From a Simple Idea</h3>
+    <!-- COMPANY OVERVIEW -->
+    <section class="section-pad">
+      <div class="container">
+        <div class="story-grid">
+          <div class="story-visual reveal">
+            <div class="story-main-card">
+              <span class="story-big-icon">🧺</span>
+              <h3>Kampala's Most Convenient Laundry</h3>
+              <p>
+                Serving busy families, professionals &amp; students across the
+                city since 2025.
+              </p>
+            </div>
+            <div class="story-badge">✅ Trusted by 2000+ Customers</div>
+          </div>
+          <div class="reveal reveal-delay-2" style="padding-top: 20px">
+            <div class="section-label">Who We Are</div>
+            <h2 class="display-md" style="margin-bottom: 18px">
+              More Than a Laundry Service
+            </h2>
+            <p
+              class="body-lg"
+              style="color: var(--text-secondary); margin-bottom: 20px"
+            >
+              Maisha Laundry and Dry Cleaners Ltd is a modern, customer-focused
+              laundry service based in Kyebando, Kampala. We provide
+              professional washing, dry cleaning, ironing, and shoe cleaning —
+              all with free pickup and delivery across Kampala.
+            </p>
+            <p
+              style="
+                color: var(--text-secondary);
+                line-height: 1.8;
+                margin-bottom: 32px;
+              "
+            >
+              We believe clean clothes should not be a chore. Whether you're a
+              busy professional, a parent with young children, or a student, we
+              take laundry off your plate so you can focus on what matters.
+            </p>
+            <div style="display: flex; gap: 12px; flex-wrap: wrap">
+              <a href="contact.html#booking" class="btn btn-primary"
+                > Book a Pickup </a
+              >
+              <a href="services.html" class="btn btn-secondary"
+                >View Services</a
+              >
+            </div>
           </div>
         </div>
-        <p style="color:var(--text-secondary);line-height:1.85;font-size:1.02rem;margin-bottom:20px;">Maisha Laundry was born from a simple idea: <strong style="color:var(--text-primary);">laundry should be easy.</strong> The founder noticed that many people in Kampala struggled to find time for washing, ironing, and dry cleaning — especially with demanding work schedules and family responsibilities.</p>
-        <p style="color:var(--text-secondary);line-height:1.85;font-size:1.02rem;margin-bottom:20px;">What started as a small neighbourhood service in Kyebando has grown into a trusted laundry brand serving customers across Kampala. We've built our reputation one clean shirt at a time — through reliability, attention to detail, and genuine care.</p>
-        <p style="color:var(--text-secondary);line-height:1.85;font-size:1.02rem;">Today, we proudly serve busy families, professionals, students, and small businesses. <strong style="color:var(--blue-vivid);">And we're just getting started.</strong></p>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- VISION & MISSION -->
-<section class="section-pad">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-label">🎯 Direction</div>
-      <h2 class="display-md">Vision &amp; Mission</h2>
-    </div>
-    <div class="mv-grid">
-      <div class="mv-card mv-vision reveal reveal-delay-1">
-        <h3>🔭 Our Vision</h3>
-        <p>To become Kampala's most trusted and convenient laundry service — known for quality, reliability, and exceptional customer care across Uganda.</p>
-        <div class="mv-ghost">V</div>
-      </div>
-      <div class="mv-card mv-mission reveal reveal-delay-2">
-        <h3>🚀 Our Mission</h3>
-        <p>To deliver fresh, clean, and perfectly folded laundry with free pickup and delivery, transparent pricing, and a smile — making our customers' lives easier, one load at a time.</p>
-        <div class="mv-ghost">M</div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CORE VALUES -->
-<section class="section-pad" style="background:var(--surface-2);">
-  <div class="container">
-    <div class="section-header reveal">
-      <div class="section-label">💎 Core Values</div>
-      <h2 class="display-md">What We Stand For</h2>
-      <p>Our values guide everything — from how we handle your clothes to how we talk to you.</p>
-    </div>
-    <div class="grid-4">
-      <div class="value-card reveal reveal-delay-1"><span class="value-icon">🧼</span><h4>Quality First</h4><p>We never rush or cut corners. Every garment gets individual care and attention.</p></div>
-      <div class="value-card reveal reveal-delay-2"><span class="value-icon">⏰</span><h4>Reliability</h4><p>We pick up and deliver when we say we will. Every single time — no excuses.</p></div>
-      <div class="value-card reveal reveal-delay-3"><span class="value-icon">😊</span><h4>Customer Focus</h4><p>Your satisfaction is our goal. Not happy? We re-clean for free, no questions asked.</p></div>
-      <div class="value-card reveal reveal-delay-4"><span class="value-icon">🌸</span><h4>Freshness</h4><p>Clothes don't just look clean — they smell amazing, every single time.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- WHY DIFFERENT + WHO WE SERVE -->
-<section class="section-pad">
-  <div class="container">
-    <div class="story-grid">
-      <div class="reveal">
-        <div class="section-label">✨ Why Choose Us</div>
-        <h2 class="display-md" style="margin-bottom:28px;">Why We're Different</h2>
-        <div class="diff-item"><div class="diff-num">1</div><div><strong>🚐 Free pickup &amp; delivery</strong> — No hidden fees, we come to you.</div></div>
-        <div class="diff-item"><div class="diff-num">2</div><div><strong>⚡ Same day service</strong> — Morning pickup, evening delivery.</div></div>
-        <div class="diff-item"><div class="diff-num">3</div><div><strong>👕 Special care for kids' clothes</strong> — Gentle handling, safe detergents.</div></div>
-        <div class="diff-item"><div class="diff-num">4</div><div><strong>🧺 Perfect folding</strong> — Like a professional organizer for your wardrobe.</div></div>
-        <div class="diff-item"><div class="diff-num">5</div><div><strong>📞 Easy booking</strong> — One phone call or WhatsApp message.</div></div>
-        <div class="diff-item"><div class="diff-num">6</div><div><strong>🕒 Open every day</strong> — 8 AM to 8 PM, including public holidays.</div></div>
-      </div>
-      <div class="reveal reveal-delay-2">
-        <div class="section-label">👥 Who We Serve</div>
-        <h2 class="display-md" style="margin-bottom:28px;">Built For Everyone</h2>
-        <div class="serve-grid">
-          <div class="serve-item"><span class="si">👨‍💼</span> Busy Professionals</div>
-          <div class="serve-item"><span class="si">👨‍👩‍👧‍👦</span> Families</div>
-          <div class="serve-item"><span class="si">🎓</span> Students</div>
-          <div class="serve-item"><span class="si">🏢</span> Small Offices</div>
-          <div class="serve-item"><span class="si">👔</span> Suit Owners</div>
-          <div class="serve-item"><span class="si">👗</span> Traditional Attire</div>
+    <!-- OUR STORY -->
+    <section class="section-pad" style="background: var(--surface-2)">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-label">Our Story</div>
+          <h2 class="display-md">How It All Started</h2>
         </div>
-        <div style="margin-top:28px;">
-          <a href="contact.html#booking" class="btn btn-primary btn-lg">🧺 Book Your First Wash</a>
+        <div style="max-width: 820px; margin: 0 auto" class="reveal">
+          <div
+            style="
+              background: var(--surface);
+              border: 1.5px solid var(--border);
+              border-radius: var(--radius-xl);
+              padding: 52px;
+              box-shadow: var(--shadow-sm);
+            "
+          >
+            <div
+              style="
+                display: flex;
+                align-items: center;
+                gap: 16px;
+                margin-bottom: 28px;
+              "
+            >
+              <div
+                style="
+                  width: 56px;
+                  height: 56px;
+                  background: var(--grad-accent);
+                  border-radius: var(--radius-md);
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  font-size: 1.5rem;
+                  flex-shrink: 0;
+                "
+              >
+                📅
+              </div>
+              <div>
+                <span class="badge badge-blue">Founded 2024</span>
+                <h3 style="margin-top: 6px; font-size: 1.2rem">
+                  Born From a Simple Idea
+                </h3>
+              </div>
+            </div>
+            <p
+              style="
+                color: var(--text-secondary);
+                line-height: 1.85;
+                font-size: 1.02rem;
+                margin-bottom: 20px;
+              "
+            >
+              Maisha Laundry was born from a simple idea:
+              <strong style="color: var(--text-primary)"
+                >laundry should be easy.</strong
+              >
+              The founder noticed that many people in Kampala struggled to find
+              time for washing, ironing, and dry cleaning — especially with
+              demanding work schedules and family responsibilities.
+            </p>
+            <p
+              style="
+                color: var(--text-secondary);
+                line-height: 1.85;
+                font-size: 1.02rem;
+                margin-bottom: 20px;
+              "
+            >
+              What started as a small neighbourhood service in Kyebando has
+              grown into a trusted laundry brand serving customers across
+              Kampala. We've built our reputation one clean shirt at a time —
+              through reliability, attention to detail, and genuine care.
+            </p>
+            <p
+              style="
+                color: var(--text-secondary);
+                line-height: 1.85;
+                font-size: 1.02rem;
+              "
+            >
+              Today, we proudly serve busy families, professionals, students,
+              and small businesses.
+              <strong style="color: var(--blue-vivid)"
+                >And we're just getting started.</strong
+              >
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- LOCATION CTA -->
-<section class="section-pad-sm" style="background:var(--surface-2);">
-  <div class="container text-center reveal">
-    <div class="section-label" style="display:inline-flex;">📍 Where We Are</div>
-    <h2 class="display-md" style="margin:12px 0 14px;">Based in Kyebando, Serving All Kampala</h2>
-    <p style="color:var(--text-secondary);max-width:480px;margin:0 auto 28px;">Kyebando Central Ring Road, towards PAED Medical — but we deliver everywhere in Kampala for free.</p>
-    <div style="display:flex;gap:14px;justify-content:center;flex-wrap:wrap;">
-      <a href="contact.html" class="btn btn-primary">📍 Get Directions</a>
-      <a href="tel:+256780603561" class="btn btn-secondary">📞 Call Us</a>
-    </div>
-  </div>
-</section>
+    <!-- VISION & MISSION -->
+    <section class="section-pad">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-label"> Direction</div>
+          <h2 class="display-md">Vision &amp; Mission</h2>
+        </div>
+        <div class="mv-grid">
+          <div class="mv-card mv-vision reveal reveal-delay-1">
+            <h3>Our Vision</h3>
+            <p>
+              To become Kampala's most trusted and convenient laundry service —
+              known for quality, reliability, and exceptional customer care
+              across Uganda.
+            </p>
+            <div class="mv-ghost">V</div>
+          </div>
+          <div class="mv-card mv-mission reveal reveal-delay-2">
+            <h3>Our Mission</h3>
+            <p>
+              To deliver fresh, clean, and perfectly folded laundry with free
+              pickup and delivery, transparent pricing, and a smile — making our
+              customers' lives easier, one load at a time.
+            </p>
+            <div class="mv-ghost">M</div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-<script src="js/layout.js"></script>
-<script src="js/main.js"></script>
-</body>
+    <!-- CORE VALUES -->
+    <section class="section-pad" style="background: var(--surface-2)">
+      <div class="container">
+        <div class="section-header reveal">
+          <div class="section-label">💎 Core Values</div>
+          <h2 class="display-md">What We Stand For</h2>
+          <p>
+            Our values guide everything — from how we handle your clothes to how
+            we talk to you.
+          </p>
+        </div>
+        <div class="grid-4">
+          <div class="value-card reveal reveal-delay-1">
+            <span class="value-icon">🧼</span>
+            <h4>Quality First</h4>
+            <p>
+              We never rush or cut corners. Every garment gets individual care
+              and attention.
+            </p>
+          </div>
+          <div class="value-card reveal reveal-delay-2">
+            <span class="value-icon">⏰</span>
+            <h4>Reliability</h4>
+            <p>
+              We pick up and deliver when we say we will. Every single time — no
+              excuses.
+            </p>
+          </div>
+          <div class="value-card reveal reveal-delay-3">
+            <span class="value-icon">😊</span>
+            <h4>Customer Focus</h4>
+            <p>
+              Your satisfaction is our goal. Not happy? We re-clean for free, no
+              questions asked.
+            </p>
+          </div>
+          <div class="value-card reveal reveal-delay-4">
+            <span class="value-icon">🌸</span>
+            <h4>Freshness</h4>
+            <p>
+              Clothes don't just look clean — they smell amazing, every single
+              time.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHY DIFFERENT + WHO WE SERVE -->
+    <section class="section-pad">
+      <div class="container">
+        <div class="story-grid">
+          <div class="reveal">
+            <div class="section-label">Why Choose Us</div>
+            <h2 class="display-md" style="margin-bottom: 28px">
+              Why We're Different
+            </h2>
+            <div class="diff-item">
+              <div class="diff-num">1</div>
+              <div>
+                <strong>🚐 Free pickup &amp; delivery</strong> No hidden fees,
+                we come to you.
+              </div>
+            </div>
+            <div class="diff-item">
+              <div class="diff-num">2</div>
+              <div>
+                <strong>⚡ Same day service</strong> — Morning pickup, evening
+                delivery.
+              </div>
+            </div>
+            <div class="diff-item">
+              <div class="diff-num">3</div>
+              <div>
+                <strong>👕 Special care for kids' clothes</strong> — Gentle
+                handling, safe detergents.
+              </div>
+            </div>
+            <div class="diff-item">
+              <div class="diff-num">4</div>
+              <div>
+                <strong>🧺 Perfect folding</strong> — Like a professional
+                organizer for your wardrobe.
+              </div>
+            </div>
+            <div class="diff-item">
+              <div class="diff-num">5</div>
+              <div>
+                <strong>📞 Easy booking</strong> — One phone call or WhatsApp
+                message.
+              </div>
+            </div>
+            <div class="diff-item">
+              <div class="diff-num">6</div>
+              <div>
+                <strong>🕒 Open every day</strong> — 8 AM to 8 PM, including
+                public holidays.
+              </div>
+            </div>
+          </div>
+          <div class="reveal reveal-delay-2">
+            <div class="section-label">Who We Serve</div>
+            <h2 class="display-md" style="margin-bottom: 28px">
+              Built For Everyone
+            </h2>
+            <div class="serve-grid">
+              <div class="serve-item">
+                <span class="si">👨‍💼</span> Busy Professionals
+              </div>
+              <div class="serve-item"><span class="si">👨‍👩‍👧‍👦</span> Families</div>
+              <div class="serve-item"><span class="si">🎓</span> Students</div>
+              <div class="serve-item">
+                <span class="si">🏢</span> Small Offices
+              </div>
+              <div class="serve-item">
+                <span class="si">👔</span> Suit Owners
+              </div>
+              <div class="serve-item">
+                <span class="si">👗</span> Traditional Attire
+              </div>
+            </div>
+            <div style="margin-top: 28px">
+              <a href="contact.html#booking" class="btn btn-primary btn-lg">
+                Book Your First Wash</a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATION CTA -->
+    <section class="section-pad-sm" style="background: var(--surface-2)">
+      <div class="container text-center reveal">
+        <div class="section-label" style="display: inline-flex">
+          📍 Where We Are
+        </div>
+        <h2 class="display-md" style="margin: 12px 0 14px">
+          Based in Kyebando, Serving All Kampala
+        </h2>
+        <p
+          style="
+            color: var(--text-secondary);
+            max-width: 480px;
+            margin: 0 auto 28px;
+          "
+        >
+          Kyebando Central Ring Road, towards PAED Medical and we deliver
+          everywhere in Kampala for free.
+        </p>
+        <div
+          style="
+            display: flex;
+            gap: 14px;
+            justify-content: center;
+            flex-wrap: wrap;
+          "
+        >
+          <a href="contact.html" class="btn btn-primary">📍 Get Directions</a>
+          <a href="tel:+256780603561" class="btn btn-secondary">📞 Call Us</a>
+        </div>
+      </div>
+    </section>
+
+    <script src="js/layout.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>

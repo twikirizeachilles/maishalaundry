@@ -74,10 +74,10 @@ const FOOTER_HTML = `
            same-day service — because your time matters.</p>
            
         <div class="footer-social">
-          <a href="https://www.instagram.com/maisha_laundry/" target="_blank" rel="noopener" title="Instagram">📸</a>
-          <a href="https://www.tiktok.com/@maisha_laundry2025" target="_blank" rel="noopener" title="TikTok">🎵</a>
-          <a href="https://wa.me/256780603561" target="_blank" rel="noopener" title="WhatsApp">💬</a>
-          <a href="mailto:maishadrycleaners@gmail.com" title="Email">📧</a>
+          <a href="https://www.instagram.com/maisha_laundry/" target="_blank" rel="noopener" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@maisha_laundry2025" target="_blank" rel="noopener" title="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="https://wa.me/256780603561" target="_blank" rel="noopener" title="WhatsApp"><i class="fa-brands fa-whatsapp"></i></a>
+          <a href="mailto:maishadrycleaners@gmail.com" title="Email"> <i class="fa-solid fa-envelope"></i></a>
         </div>
       </div>
 
@@ -120,15 +120,15 @@ const FOOTER_HTML = `
           </span>
         </div>
         <div class="footer-contact-item">
-          <span class="icon">💬</span>
+          <span class="icon"> <i class="fa-brands fa-whatsapp"></i></span>
           <a href="https://wa.me/256780603561" target="_blank" rel="noopener" style="color:#8aacd0;">WhatsApp: 0780 603561</a>
         </div>
         <div class="footer-contact-item">
-          <span class="icon">📧</span>
+          <span class="icon"> <i class="fa-solid fa-envelope"></i></span>
           <a href="mailto:maishadrycleaners@gmail.com" style="color:#8aacd0;">maishadrycleaners@gmail.com</a>
         </div>
         <div class="footer-contact-item">
-          <span class="icon">📍</span>
+          <span class="icon"> <i class="fa-solid fa-map-marker-alt"></i></span>
           <span>Kyebando Central Ring Road,<br>towards PAED Medical, Kampala</span>
         </div>
         <div class="footer-contact-item">
@@ -144,11 +144,11 @@ const FOOTER_HTML = `
     <div class="footer-bottom">
       <p>© <span id="footer-year"></span> Maisha Laundry &amp; Dry Cleaners Ltd. All rights reserved. &nbsp;|&nbsp; Fresh. Clean. Delivered.</p>
       <div class="footer-bottom-social">
-        <a href="https://www.instagram.com/maisha_laundry/" target="_blank" rel="noopener">Instagram</a>
+        <a href="https://www.instagram.com/maisha_laundry/" target="_blank" rel="noopener"><i class="fa-brands fa-instagram"></i> Instagram</a>
         <span style="color:#2a4a6a;">•</span>
-        <a href="https://www.tiktok.com/@maisha_laundry2025" target="_blank" rel="noopener">TikTok</a>
+        <a href="https://www.tiktok.com/@maisha_laundry2025" target="_blank" rel="noopener"><i class="fa-brands fa-tiktok"></i> TikTok</a>
         <span style="color:#2a4a6a;">•</span>
-        <a href="https://wa.me/256780603561" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="https://wa.me/256780603561" target="_blank" rel="noopener"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
         <span style="color:#2a4a6a;">•</span>
         <a href="mailto:maishadrycleaners@gmail.com">Email</a>
       </div>
@@ -163,7 +163,7 @@ const WA_BTN = `
    target="_blank" rel="noopener"
    class="whatsapp-float"
    aria-label="Chat with us on WhatsApp">
-  <span class="wa-icon">💬</span>
+  <span class="wa-icon">  <i class="fa-brands fa-whatsapp"></i></span>
   <span class="wa-text">WhatsApp Us</span>
 </a>
 `;

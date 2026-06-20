@@ -1,348 +1,807 @@
 <!doctype html>
-<html class="scroll-smooth" lang="en" style="">
+<html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>FreshPress Laundry - Why Choose Us</title>
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;display=swap"
-      rel="stylesheet"
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Maisha Laundry – Book Pickup | Kampala</title>
+    <meta
+      name="description"
+      content="Get in touch with Maisha Laundry. Call, WhatsApp, or use our online booking form. Free pickup & delivery across Kampala."
     />
+    <link rel="icon" type="image/png" sizes="32x32" href="images/logo1.png" />
+    <!-- Tailwind via CDN + custom base -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome 6 (free) -->
     <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
       rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-    <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "surface-tint": "#255abb",
-              "tertiary-fixed": "#d8e2ff",
-              surface: "#f8faf9",
-              error: "#ba1a1a",
-              "primary-container": "#0549aa",
-              outline: "#737784",
-              "on-primary-fixed-variant": "#00419c",
-              "surface-container-lowest": "#ffffff",
-              "tertiary-container": "#254d8e",
-              "on-surface-variant": "#434652",
-              "on-surface": "#191c1c",
-              "on-primary-fixed": "#001945",
-              "primary-fixed": "#d9e2ff",
-              "on-secondary": "#ffffff",
-              "outline-variant": "#c3c6d4",
-              "surface-container-high": "#e7e8e7",
-              "on-tertiary-fixed": "#001a40",
-              "on-primary-container": "#a7bfff",
-              "secondary-fixed": "#baf470",
-              "surface-bright": "#f8faf9",
-              "on-error-container": "#93000a",
-              "surface-dim": "#d9dad9",
-              primary: "#00337e",
-              "surface-variant": "#e1e3e2",
-              secondary: "#416900",
-              "on-tertiary": "#ffffff",
-              "inverse-on-surface": "#f0f1f0",
-              "on-primary": "#ffffff",
-              "secondary-fixed-dim": "#9fd757",
-              "on-secondary-container": "#457000",
-              "on-tertiary-fixed-variant": "#1b4586",
-              "surface-container": "#edeeed",
-              "secondary-container": "#baf470",
-              "inverse-primary": "#b0c6ff",
-              "surface-container-highest": "#e1e3e2",
-              "on-error": "#ffffff",
-              "on-tertiary-container": "#a2c0ff",
-              "on-background": "#191c1c",
-              "inverse-surface": "#2e3131",
-              "primary-fixed-dim": "#b0c6ff",
-              "tertiary-fixed-dim": "#acc7ff",
-              "on-secondary-fixed-variant": "#304f00",
-              "on-secondary-fixed": "#102000",
-              "surface-container-low": "#f3f4f3",
-              "error-container": "#ffdad6",
-              background: "#f8faf9",
-              tertiary: "#003575",
-            },
-            borderRadius: {
-              DEFAULT: "0.25rem",
-              lg: "0.5rem",
-              xl: "0.75rem",
-              full: "9999px",
-            },
-            spacing: {
-              xl: "80px",
-              sm: "12px",
-              "container-max": "1200px",
-              md: "24px",
-              base: "8px",
-              xs: "4px",
-              lg: "48px",
-              gutter: "24px",
-            },
-            fontFamily: {
-              "label-md": ["Manrope"],
-              "label-sm": ["Manrope"],
-              "headline-md": ["Manrope"],
-              "display-lg": ["Manrope"],
-              "headline-lg": ["Manrope"],
-              "body-md": ["Manrope"],
-              "body-lg": ["Manrope"],
-              "headline-lg-mobile": ["Manrope"],
-            },
-            fontSize: {
-              "label-md": [
-                "14px",
-                {
-                  lineHeight: "20px",
-                  letterSpacing: "0.01em",
-                  fontWeight: "600",
-                },
-              ],
-              "label-sm": [
-                "12px",
-                {
-                  lineHeight: "16px",
-                  letterSpacing: "0.02em",
-                  fontWeight: "500",
-                },
-              ],
-              "headline-md": [
-                "24px",
-                { lineHeight: "32px", fontWeight: "600" },
-              ],
-              "display-lg": [
-                "48px",
-                {
-                  lineHeight: "56px",
-                  letterSpacing: "-0.02em",
-                  fontWeight: "800",
-                },
-              ],
-              "headline-lg": [
-                "32px",
-                {
-                  lineHeight: "40px",
-                  letterSpacing: "-0.01em",
-                  fontWeight: "700",
-                },
-              ],
-              "body-md": ["16px", { lineHeight: "24px", fontWeight: "400" }],
-              "body-lg": ["18px", { lineHeight: "28px", fontWeight: "400" }],
-              "headline-lg-mobile": [
-                "28px",
-                { lineHeight: "36px", fontWeight: "700" },
-              ],
-            },
-          },
-        },
-      };
-    </script>
     <style>
-      .material-symbols-outlined {
-        font-variation-settings:
-          "FILL" 0,
-          "wght" 400,
-          "GRAD" 0,
-          "opsz" 24;
+      /* custom overrides & smoothness */
+      body {
+        background: #f8fafc;
+        font-family:
+          system-ui,
+          -apple-system,
+          "Segoe UI",
+          Roboto,
+          Helvetica,
+          Arial,
+          sans-serif;
       }
-      .path-container {
-        position: relative;
-        height: 300px;
+      .bg-surface {
+        background: #ffffff;
       }
-      .dashed-curve {
-        position: absolute;
-        top: 20%;
-        left: 10%;
-        width: 80%;
-        height: 150px;
-        fill: none;
-        stroke: #baf470;
-        stroke-width: 2;
-        stroke-dasharray: 8 8;
-        z-index: 1;
+      .border-soft {
+        border-color: #e9edf4;
       }
-      .scalloped-border {
-        mask:
-          radial-gradient(12px at 12px 0, #0000 98%, #000) 0 -12px/100% 100%,
-          radial-gradient(12px at 0 12px, #0000 98%, #000) -12px 0/100% 100%,
-          radial-gradient(12px at 12px 24px, #000 98%, #0000) 0 12px/100% 100%,
-          radial-gradient(12px at 24px 12px, #000 98%, #0000) 12px 0/100% 100%;
-        background: #baf470;
+      .text-muted {
+        color: #64748b;
       }
-      /* Alternative scalloped look using CSS mask for accuracy to IMAGE_5 */
-      .scalloped-icon {
-        position: relative;
-        width: 80px;
-        height: 80px;
-        background-color: #baf470;
-        border-radius: 50%;
+      .text-primary {
+        color: #0b2b4a;
+      }
+      .bg-accent {
+        background: linear-gradient(145deg, #1a4b8c, #0d2f5a);
+      }
+      .bg-accent-light {
+        background: #eef4ff;
+      }
+      .btn-primary {
+        background: #1a4b8c;
+        color: white;
+        transition: all 0.2s;
+      }
+      .btn-primary:hover {
+        background: #0f3a6e;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 18px rgba(26, 75, 140, 0.25);
+      }
+      .btn-whatsapp {
+        background: #25d366;
+        color: white;
+        transition: all 0.2s;
+      }
+      .btn-whatsapp:hover {
+        background: #1da85c;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 18px rgba(37, 211, 102, 0.25);
+      }
+      .btn-outline {
+        border: 1.5px solid #1a4b8c;
+        color: #1a4b8c;
+        transition: all 0.2s;
+      }
+      .btn-outline:hover {
+        background: #1a4b8c;
+        color: white;
+      }
+      .shadow-card {
+        box-shadow:
+          0 8px 30px rgba(0, 0, 0, 0.04),
+          0 2px 8px rgba(0, 20, 40, 0.04);
+      }
+      .shadow-hover:hover {
+        box-shadow: 0 16px 40px rgba(0, 0, 0, 0.06);
+      }
+      .transition-smooth {
+        transition: all 0.25s ease;
+      }
+      .hero-gradient {
+        background: linear-gradient(
+          135deg,
+          #0b2b4a 0%,
+          #1a4b8c 60%,
+          #2a6bb0 100%
+        );
+      }
+      .service-checkbox-label {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 500;
+        cursor: pointer;
+        padding: 6px 0;
+        transition: color 0.2s;
+      }
+      .service-checkbox-label:hover {
+        color: #1a4b8c;
+      }
+      .service-checkbox-label input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        accent-color: #1a4b8c;
+        flex-shrink: 0;
+      }
+      .map-wrap {
+        border-radius: 20px;
+        overflow: hidden;
+        border: 1px solid #e9edf4;
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+        height: 260px;
+        background: #eef2f7;
+      }
+      .map-wrap iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        display: block;
+      }
+      .cc-card {
+        background: white;
+        border: 1px solid #e9edf4;
+        border-radius: 20px;
+        padding: 18px 20px;
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+        transition: all 0.2s;
+      }
+      .cc-card:hover {
+        border-color: #1a4b8c;
+        transform: translateX(4px);
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.02);
+      }
+      .cc-ico {
+        width: 44px;
+        height: 44px;
+        border-radius: 14px;
+        background: #eef4ff;
         display: flex;
         align-items: center;
         justify-content: center;
-        box-shadow: 0 0 0 4px rgba(186, 244, 112, 0.2);
+        font-size: 1.25rem;
+        flex-shrink: 0;
+        color: #1a4b8c;
       }
-      .scalloped-icon::after {
-        content: "";
-        position: absolute;
-        inset: -4px;
-        border-radius: 50%;
-        border: 2px dashed #baf470;
-        opacity: 0.5;
+      .form-group label {
+        font-weight: 600;
+        font-size: 0.9rem;
+        color: #1e293b;
+        margin-bottom: 4px;
+        display: block;
+      }
+      .form-group input,
+      .form-group select,
+      .form-group textarea {
+        width: 100%;
+        padding: 12px 14px;
+        border: 1.5px solid #e2e8f0;
+        border-radius: 14px;
+        background: #fcfcfd;
+        font-size: 0.95rem;
+        transition: 0.2s;
+      }
+      .form-group input:focus,
+      .form-group select:focus,
+      .form-group textarea:focus {
+        outline: none;
+        border-color: #1a4b8c;
+        box-shadow: 0 0 0 3px rgba(26, 75, 140, 0.15);
+      }
+      .form-group textarea {
+        min-height: 100px;
+        resize: vertical;
+      }
+      .bk-card {
+        background: white;
+        border: 1px solid #e9edf4;
+        border-radius: 28px;
+        padding: 36px 32px;
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.02);
+      }
+      @media (max-width: 640px) {
+        .bk-card {
+          padding: 24px 16px;
+        }
+        .cc-card {
+          padding: 14px;
+        }
+      }
+      /* hide honeypot */
+      .hp-field {
+        display: none;
+      }
+      .services-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 4px 12px;
+        margin-top: 4px;
+      }
+      .form-success {
+        text-align: center;
+        padding: 30px 12px;
+      }
+      .form-success .success-icon {
+        font-size: 3.6rem;
+        margin-bottom: 12px;
       }
     </style>
   </head>
-  <body class="bg-surface text-on-surface font-body-md overflow-x-hidden">
-    <!-- TopNavBar -->
-    <header
-      class="bg-surface dark:bg-background border-b border-outline-variant dark:border-outline shadow-sm dark:shadow-none docked full-width top-0 z-50 sticky"
-    ></header>
-    <main>
-      <!-- Why Choose Us Redesigned Section -->
-      <section
-        class="bg-tertiary text-white py-xl px-gutter relative overflow-hidden"
-      >
-        <div class="max-w-container-max mx-auto relative z-10">
-          <!-- Header and Description Row -->
-          <div
-            class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-md mb-xl"
+  <body>
+    <!-- spacer for fixed nav (if any) -->
+    <div class="h-16 lg:h-20"></div>
+
+    <!-- HERO -->
+    <section class="hero-gradient text-white py-12 md:py-16 lg:py-20">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 text-center md:text-left">
+        <div
+          class="inline-block bg-white/20 backdrop-blur-sm text-white/90 px-4 py-1.5 rounded-full text-sm font-semibold border border-white/20 mb-4"
+        >
+          📞 Get In Touch
+        </div>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+          Contact Maisha Laundry
+        </h1>
+        <p
+          class="text-lg md:text-xl text-white/80 max-w-2xl mt-4 mx-auto md:mx-0"
+        >
+          We're ready to pick up your laundry. Call, WhatsApp, email, or use the
+          form below — we respond fast!
+        </p>
+      </div>
+    </section>
+
+    <!-- QUICK ACTIONS -->
+    <section class="py-6 md:py-8 bg-white/70">
+      <div class="max-w-2xl mx-auto px-4 sm:px-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <a
+            href="tel:+256780603561"
+            class="flex items-center gap-4 p-4 rounded-2xl border border-soft bg-white shadow-card hover:shadow-md transition-smooth hover:border-blue-700"
           >
-            <div class="lg:w-1/2">
+            <span class="text-3xl">📞</span>
+            <div>
+              <strong>Call Us Now</strong
+              ><small class="block text-muted text-sm"
+                >0780 603561 · 0751 571256</small
+              >
+            </div>
+          </a>
+          <a
+            href="https://wa.me/256780603561?text=Hello%20Maisha%20Laundry!%20I'd%20like%20to%20book%20a%20pickup."
+            target="_blank"
+            rel="noopener"
+            class="flex items-center gap-4 p-4 rounded-2xl border border-soft bg-white shadow-card hover:shadow-md transition-smooth hover:border-green-500"
+          >
+            <span class="text-3xl text-[#25D366]"
+              ><i class="fa-brands fa-whatsapp"></i
+            ></span>
+            <div>
+              <strong>WhatsApp Us</strong
+              ><small class="block text-muted text-sm"
+                >Chat instantly on 0780 603561</small
+              >
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- MAIN CONTACT LAYOUT: GRID -->
+    <section class="py-8 md:py-12 bg-[#f8fafc]" id="booking">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 xl:gap-12">
+          <!-- LEFT COL: info + map -->
+          <div class="lg:col-span-2 space-y-5">
+            <div>
               <span
-                class="text-secondary-fixed font-label-md tracking-widest uppercase mb-4 block"
-                >[ WHY CHOOSE US ]</span
+                class="text-sm font-semibold text-blue-700 bg-blue-100/70 px-3 py-1 rounded-full"
+                >Contact Details</span
               >
-              <h2
-                class="font-display-lg text-display-lg text-white leading-tight"
-              >
-                Finest Dry Cleaning And Laundry Services
+              <h2 class="text-2xl md:text-3xl font-bold text-primary mt-2">
+                How to Reach Us
               </h2>
             </div>
-            <div class="lg:w-1/3 mt-6 lg:mt-10">
-              <p
-                class="font-body-md text-surface-container-low opacity-90 leading-relaxed"
-              >
-                The company's primary aim is to provide modern laundry and dry
-                cleaning services tailored to customers' needs. Providing a
-                flexible and cost-effective service, while maintaining the
-                highest level of quality is our goal.
+
+            <!-- cards -->
+            <div class="cc-card">
+              <div class="cc-ico">📞</div>
+              <div>
+                <div
+                  class="text-xs uppercase tracking-wider text-muted font-bold"
+                >
+                  Phone
+                </div>
+                <div class="font-semibold">
+                  <a href="tel:+256780603561" class="text-blue-700"
+                    >0780 603561</a
+                  >
+                  /
+                  <a href="tel:+256751571256" class="text-blue-700"
+                    >0751 571256</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="cc-card">
+              <div class="cc-ico">
+                <i class="fa-brands fa-whatsapp text-[#25D366]"></i>
+              </div>
+              <div>
+                <div
+                  class="text-xs uppercase tracking-wider text-muted font-bold"
+                >
+                  WhatsApp
+                </div>
+                <div class="font-semibold">
+                  <a
+                    href="https://wa.me/256780603561?text=Hello%20Maisha%20Laundry!"
+                    target="_blank"
+                    class="text-blue-700"
+                    >0780 603561 </a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="cc-card">
+              <div class="cc-ico">📧</div>
+              <div>
+                <div
+                  class="text-xs uppercase tracking-wider text-muted font-bold"
+                >
+                  Email
+                </div>
+                <div class="font-semibold">
+                  <a
+                    href="mailto:maishadrycleaners@gmail.com"
+                    class="text-blue-700"
+                    >maishadrycleaners@gmail.com</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="cc-card">
+              <div class="cc-ico"><i class="fa-solid fa-location-dot"></i></div>
+              <div>
+                <div
+                  class="text-xs uppercase tracking-wider text-muted font-bold"
+                >
+                  Location
+                </div>
+                <div class="font-semibold">
+                  Kyebando Central Ring Road, towards PAED Medical, Kampala
+                </div>
+              </div>
+            </div>
+            <div class="cc-card">
+              <div class="cc-ico">🕒</div>
+              <div>
+                <div
+                  class="text-xs uppercase tracking-wider text-muted font-bold"
+                >
+                  Operating Hours
+                </div>
+                <div class="font-semibold">
+                  Daily: 8:00 AM – 8:00 PM
+                  <span class="block text-sm font-normal text-muted"
+                    >Including weekends &amp; holidays</span
+                  >
+                </div>
+              </div>
+            </div>
+
+            <!-- Social -->
+            <div class="bg-white p-5 rounded-2xl border border-soft">
+              <h4 class="font-bold text-sm mb-3">Follow Us</h4>
+              <div class="flex flex-wrap gap-3">
+                <a
+                  href="https://www.instagram.com/maisha_laundry/"
+                  target="_blank"
+                  class="inline-flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-[#f09433] via-[#e6683c] to-[#bc1888] text-white rounded-full text-sm font-bold"
+                  ><i class="fa-brands fa-instagram"></i> Instagram</a
+                >
+                <a
+                  href="https://www.tiktok.com/@maisha_laundry2025"
+                  target="_blank"
+                  class="inline-flex items-center gap-2 px-4 py-2 bg-black text-white rounded-full text-sm font-bold"
+                  ><i class="fa-brands fa-tiktok"></i> TikTok</a
+                >
+              </div>
+            </div>
+
+            <!-- Map -->
+            <div>
+              <h4 class="font-bold text-sm mb-2">Find Us on the Map</h4>
+              <div class="map-wrap">
+                <iframe
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.740238683918!2d32.58190117357705!3d0.35845636396309694!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x177dbbbecc6c63df%3A0xa6c25675e0d7a430!2sMAISHA%20LAUNDRY%20AND%20DRY%20CLEANERS!5e0!3m2!1sen!2sug!4v1781894064381!5m2!1sen!2sug"
+                  allowfullscreen
+                  loading="lazy"
+                  title="Maisha Laundry — Kyebando, Kampala"
+                ></iframe>
+              </div>
+              <p class="text-xs text-muted mt-2 text-center">
+                <a
+                  href="https://maps.google.com/maps?q=MAISHA+LAUNDRY+AND+DRY+CLEANERS,Kyebando,Kampala"
+                  target="_blank"
+                  class="text-blue-700 font-medium"
+                  >Open full map in Google Maps →</a
+                >
               </p>
             </div>
           </div>
-          <!-- Path and Process Grid -->
-          <div class="relative pt-12 pb-8">
-            <!-- SVG Curved Path -->
-            <svg
-              class="absolute top-0 left-0 w-full h-[200px] pointer-events-none hidden md:block"
-              fill="none"
-              viewBox="0 0 1200 200"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M150,120 Q300,180 450,120 T750,120 T1050,120"
-                opacity="0.3"
-                stroke="#baf470"
-                stroke-dasharray="8 8"
-                stroke-width="2"
-              ></path>
-            </svg>
-            <div
-              class="grid grid-cols-1 md:grid-cols-4 gap-md md:gap-gutter relative z-20"
-            >
-              <!-- Item 1 -->
-              <div
-                class="flex flex-col items-center text-center group translate-y-8 md:translate-y-4"
+
+          <!-- RIGHT COL: Booking Form (multiple services via checkboxes) -->
+          <div class="lg:col-span-3">
+            <div class="bk-card">
+              <span
+                class="text-sm font-semibold text-blue-700 bg-blue-100/70 px-3 py-1 rounded-full inline-block mb-3"
+                >📋 Book a Pickup</span
               >
-                <div
-                  class="scalloped-icon mb-md group-hover:scale-110 transition-transform duration-300"
-                >
-                  <span
-                    class="material-symbols-outlined text-4xl text-on-secondary-container"
-                    data-icon="laundry"
-                    >laundry</span
-                  >
-                </div>
-                <h3 class="font-headline-md text-secondary-fixed mb-xs">
-                  Cleanest Service
-                </h3>
-                <p class="font-body-md text-surface-container-low text-sm px-4">
-                  Experience the freshest, cleanest laundry—because your clothes
-                  deserve the best
-                </p>
-              </div>
-              <!-- Item 2 -->
-              <div
-                class="flex flex-col items-center text-center group translate-y-12 md:translate-y-16"
+              <h2 class="text-2xl md:text-3xl font-bold text-primary">
+                Request Pickup or<br />Send Us a Message
+              </h2>
+              <p class="text-muted text-sm md:text-base mt-2 mb-6">
+                Fill in the details and we'll contact you within minutes.
+              </p>
+
+              <form
+                class="maisha-form"
+                action="https://formspree.io/f/YOUR_FORM_ID"
+                method="POST"
               >
-                <div
-                  class="scalloped-icon mb-md group-hover:scale-110 transition-transform duration-300"
-                >
-                  <span
-                    class="material-symbols-outlined text-4xl text-on-secondary-container"
-                    data-icon="bolt"
-                    >bolt</span
-                  >
+                <!-- hidden formspree config -->
+                <input
+                  type="hidden"
+                  name="_subject"
+                  value="New Booking / Message — Maisha Laundry Website"
+                />
+                <input
+                  type="hidden"
+                  name="_replyto"
+                  value="maishadrycleaners@gmail.com"
+                />
+                <input type="text" name="_gotcha" class="hp-field" />
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div class="form-group">
+                    <label for="c-name">Full Name *</label
+                    ><input
+                      type="text"
+                      id="c-name"
+                      name="name"
+                      placeholder="Your full name"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="c-phone">Phone Number *</label
+                    ><input
+                      type="tel"
+                      id="c-phone"
+                      name="phone"
+                      placeholder="07XX XXX XXX"
+                      required
+                    />
+                  </div>
                 </div>
-                <h3 class="font-headline-md text-secondary-fixed mb-xs">
-                  Super Fast Service
-                </h3>
-                <p class="font-body-md text-surface-container-low text-sm px-4">
-                  Lightning-fast laundry service—fresh, clean clothes at your
-                  doorstep in no time
-                </p>
-              </div>
-              <!-- Item 3 -->
-              <div
-                class="flex flex-col items-center text-center group translate-y-8 md:translate-y-4"
-              >
-                <div
-                  class="scalloped-icon mb-md group-hover:scale-110 transition-transform duration-300"
-                >
-                  <span
-                    class="material-symbols-outlined text-4xl text-on-secondary-container"
-                    data-icon="dry_cleaning"
-                    >dry_cleaning</span
-                  >
+                <div class="form-group">
+                  <label for="c-email">Email Address (optional)</label
+                  ><input
+                    type="email"
+                    id="c-email"
+                    name="email"
+                    placeholder="your@email.com"
+                  />
                 </div>
-                <h3 class="font-headline-md text-secondary-fixed mb-xs">
-                  Convenience
-                </h3>
-                <p class="font-body-md text-surface-container-low text-sm px-4">
-                  Laundry made effortless—pickup, cleaning, and delivery at your
-                  convenience
-                </p>
-              </div>
-              <!-- Item 4 -->
-              <div
-                class="flex flex-col items-center text-center group translate-y-12 md:translate-y-16"
-              >
-                <div
-                  class="scalloped-icon mb-md group-hover:scale-110 transition-transform duration-300"
-                >
-                  <span
-                    class="material-symbols-outlined text-4xl text-on-secondary-container"
-                    data-icon="payments"
-                    >payments</span
+
+                <!-- MULTIPLE SERVICES via checkboxes (user can choose many) -->
+                <div class="form-group">
+                  <label class="block font-semibold text-sm"
+                    >Service Interested In *
+                    <span class="text-muted font-normal text-xs"
+                      >(select all that apply)</span
+                    ></label
                   >
+                  <div class="services-grid">
+                    <label class="service-checkbox-label"
+                      ><input
+                        type="checkbox"
+                        name="services[]"
+                        value="Wash & Fold"
+                      />
+                      Wash & Fold</label
+                    >
+                    <label class="service-checkbox-label"
+                      ><input
+                        type="checkbox"
+                        name="services[]"
+                        value="Ironing / Steaming"
+                      />
+                      Ironing / Steaming</label
+                    >
+                    <label class="service-checkbox-label"
+                      ><input
+                        type="checkbox"
+                        name="services[]"
+                        value="Dry Cleaning"
+                      />
+                      Dry Cleaning</label
+                    >
+                    <label class="service-checkbox-label"
+                      ><input
+                        type="checkbox"
+                        name="services[]"
+                        value="Shoe Cleaning"
+                      />
+                      Shoe Cleaning</label
+                    >
+                    <label class="service-checkbox-label"
+                      ><input
+                        type="checkbox"
+                        name="services[]"
+                        value="Basket Wash — 30,000/= flat"
+                      />
+                      Basket Wash — 30,000/=</label
+                    >
+                    <label class="service-checkbox-label"
+                      ><input
+                        type="checkbox"
+                        name="services[]"
+                        value="Carpet Cleaning"
+                      />
+                      Carpet Cleaning</label
+                    >
+                    <label class="service-checkbox-label"
+                      ><input
+                        type="checkbox"
+                        name="services[]"
+                        value="Soft Toy Cleaning"
+                      />
+                      Soft Toy Cleaning</label
+                    >
+                    <label class="service-checkbox-label"
+                      ><input
+                        type="checkbox"
+                        name="services[]"
+                        value="Suit Cleaning"
+                      />
+                      Suit Cleaning</label
+                    >
+                    <label class="service-checkbox-label"
+                      ><input
+                        type="checkbox"
+                        name="services[]"
+                        value="Traditional Attire / Wedding Gown"
+                      />
+                      Traditional / Wedding Gown</label
+                    >
+                    <label class="service-checkbox-label"
+                      ><input
+                        type="checkbox"
+                        name="services[]"
+                        value="Other"
+                        id="chk-other"
+                      />
+                      Other (explain)</label
+                    >
+                  </div>
+                  <!-- "Other" specification (visible when checked) -->
+                  <div
+                    id="other-specify-group"
+                    class="mt-2"
+                    style="display: none"
+                  >
+                    <input
+                      type="text"
+                      id="c-other-specify"
+                      name="other_specify"
+                      placeholder="Please specify other service..."
+                      class="w-full p-3 border border-soft rounded-xl"
+                    />
+                  </div>
+                  <div
+                    id="service-error"
+                    class="text-red-500 text-sm mt-1 hidden"
+                  >
+                    Please select at least one service.
+                  </div>
                 </div>
-                <h3 class="font-headline-md text-secondary-fixed mb-xs">
-                  Affordable Prices
-                </h3>
-                <p class="font-body-md text-surface-container-low text-sm px-4">
-                  Premium laundry service at prices that fit your budget
+
+                <div class="form-group">
+                  <label for="c-address">Pickup Address *</label
+                  ><input
+                    type="text"
+                    id="c-address"
+                    name="address"
+                    placeholder="e.g. Ntinda, near Shoprite"
+                    required
+                  />
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                  <div class="form-group">
+                    <label for="c-date">Preferred Pickup Date</label
+                    ><input type="date" id="c-date" name="pickup_date" />
+                  </div>
+                  <div class="form-group">
+                    <label for="c-time">Preferred Time</label
+                    ><input
+                      type="time"
+                      id="c-time"
+                      name="pickup_time"
+                      min="08:00"
+                      max="20:00"
+                    />
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label for="c-msg">Message / Special Instructions</label
+                  ><textarea
+                    id="c-msg"
+                    name="message"
+                    placeholder="Any special requests, stains to target, delicate items, preferred dates…"
+                  ></textarea>
+                </div>
+
+                <button
+                  type="submit"
+                  id="submitBtn"
+                  class="btn-primary w-full py-4 rounded-2xl font-bold text-lg shadow-md hover:shadow-lg transition-smooth mt-2"
+                >
+                   Send Message 
+                </button>
+                <p class="text-xs text-muted text-center mt-4">
+                   Your info is safe with us. We'll contact you shortly.<br />Or
+                  email
+                  <a
+                    href="mailto:maishadrycleaners@gmail.com"
+                    class="text-blue-700 font-medium"
+                    >maishadrycleaners@gmail.com</a
+                  >
                 </p>
-              </div>
+              </form>
             </div>
           </div>
         </div>
-      </section>
-    </main>
-    <!-- Footer -->
-    <footer
-      class="bg-surface-container-highest dark:bg-inverse-surface border-t border-outline-variant"
-    ></footer>
+      </div>
+    </section>
+
+    <!-- URGENT CTA -->
+    <section class="py-10 md:py-14 bg-[#f1f5f9]">
+      <div class="max-w-3xl mx-auto text-center px-4 sm:px-6">
+        <h3 class="text-2xl md:text-4xl font-bold text-primary">
+          Need Immediate Help?
+        </h3>
+        <p class="text-muted text-lg mt-2">
+          We answer 8 AM to 8 PM every day, including public holidays.
+        </p>
+        <div class="flex flex-wrap justify-center gap-4 mt-6">
+          <a
+            href="tel:+256780603561"
+            class="btn-primary px-6 py-3 rounded-2xl font-bold text-lg inline-flex items-center gap-2"
+            >📞 Call 0780 603561</a
+          >
+          <a
+            href="tel:+256751571256"
+            class="btn-outline px-6 py-3 rounded-2xl font-bold text-lg inline-flex items-center gap-2 border-2 border-blue-700 text-blue-700 hover:bg-blue-700 hover:text-white transition"
+            >📞 Call 0751 571256</a
+          >
+          <a
+            href="https://wa.me/256780603561?text=Hello%20Maisha!%20I%20need%20help%20now."
+            target="_blank"
+            class="btn-whatsapp px-6 py-3 rounded-2xl font-bold text-lg inline-flex items-center gap-2"
+            ><i class="fa-brands fa-whatsapp"></i> WhatsApp Now</a
+          >
+        </div>
+        <p class="text-sm text-muted mt-5">
+          Have questions?
+          <a href="index.html#faq" class="text-blue-700 font-semibold"
+            >Read our FAQ →</a
+          >
+        </p>
+      </div>
+    </section>
+
+    <!-- JavaScript: multiple services, other toggle, form handling -->
+    <script>
+      (function () {
+        const form = document.querySelector(".maisha-form");
+        const submitBtn = document.getElementById("submitBtn");
+        const otherCheckbox = document.getElementById("chk-other");
+        const specifyGroup = document.getElementById("other-specify-group");
+        const specifyInput = document.getElementById("c-other-specify");
+        const serviceError = document.getElementById("service-error");
+
+        if (otherCheckbox) {
+          otherCheckbox.addEventListener("change", function () {
+            specifyGroup.style.display = this.checked ? "block" : "none";
+            if (!this.checked) {
+              specifyInput.value = "";
+            }
+          });
+        }
+
+        if (form) {
+          form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            // gather selected services
+            const checkedBoxes = document.querySelectorAll(
+              'input[name="services[]"]:checked',
+            );
+            let selected = Array.from(checkedBoxes).map((cb) => cb.value);
+            // if "Other" checked and filled, push it
+            if (
+              otherCheckbox &&
+              otherCheckbox.checked &&
+              specifyInput.value.trim()
+            ) {
+              selected.push("Other: " + specifyInput.value.trim());
+            }
+
+            if (selected.length === 0) {
+              serviceError.classList.remove("hidden");
+              serviceError.scrollIntoView({
+                behavior: "smooth",
+                block: "center",
+              });
+              return;
+            } else {
+              serviceError.classList.add("hidden");
+            }
+
+            // Prepare FormData
+            const formData = new FormData(form);
+            // replace services with comma separated string
+            formData.set("services[]", selected.join(", "));
+            // also add a readable field
+            formData.set("selected_services", selected.join(", "));
+
+            // show loading
+            const originalHtml = submitBtn.innerHTML;
+            submitBtn.innerHTML = "⏳ Sending...";
+            submitBtn.disabled = true;
+
+            fetch(form.action, {
+              method: "POST",
+              body: formData,
+              headers: { Accept: "application/json" },
+            })
+              .then((res) => {
+                if (res.ok) {
+                  form.innerHTML = `
+                <div class="form-success">
+                  <div class="success-icon">✅</div>
+                  <h3 class="text-2xl font-bold text-blue-700">Thank You! Message Received.</h3>
+                  <p class="text-muted max-w-sm mx-auto mt-2">Our team will contact you shortly on your phone number. You can also reach us directly on WhatsApp.</p>
+                  <a href="https://wa.me/256780603561" target="_blank" class="btn-whatsapp inline-block mt-4 px-6 py-3 rounded-2xl font-bold">💬 Chat on WhatsApp: 0780 603561</a>
+                </div>
+              `;
+                } else throw new Error("server error");
+              })
+              .catch(() => {
+                // fallback: open WhatsApp with pre-filled message
+                const name = document.getElementById("c-name")?.value || "";
+                const phone = document.getElementById("c-phone")?.value || "";
+                const address =
+                  document.getElementById("c-address")?.value || "";
+                const msg = document.getElementById("c-msg")?.value || "";
+                const services = selected.join(", ");
+                const waMsg = encodeURIComponent(
+                  "Hello Maisha Laundry!\n\nName: " +
+                    name +
+                    "\nPhone: " +
+                    phone +
+                    "\nAddress: " +
+                    address +
+                    "\nServices: " +
+                    services +
+                    "\nMessage: " +
+                    msg,
+                );
+                window.open(
+                  "https://wa.me/256780603561?text=" + waMsg,
+                  "_blank",
+                );
+                submitBtn.innerHTML = originalHtml;
+                submitBtn.disabled = false;
+              });
+          });
+        }
+      })();
+    </script>
   </body>
 </html>
