@@ -343,20 +343,29 @@ h5 {
   left: 0;
   right: 0;
   z-index: 1000;
-  height: var(--nav-height);
-  background: rgba(254, 255, 254, 0.85);
+  height: 72px;
+  min-height: 72px;
+  max-height: 72px;
+  background: rgba(254, 255, 254, 0.95);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
   transition: all var(--transition);
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
 }
 
 [data-theme="dark"] .navbar {
-  background: rgba(8, 15, 28, 0.9);
+  background: rgba(8, 15, 28, 0.95);
 }
 
 .navbar.scrolled {
   box-shadow: var(--shadow-md);
+}
+
+/* Ensure body has padding top to prevent overlap */
+body {
+  padding-top: 72px;
+  margin: 0;
 }
 
 .nav-container {
@@ -378,21 +387,21 @@ h5 {
   font-weight: 800;
   font-size: 1.2rem;
   color: var(--blue-vivid);
+  flex-shrink: 0;
+  text-decoration: none;
+  z-index: 1001;
 }
-.nav-logo-icon {
-  width: 40px;
+
+.nav-logo-img {
   height: 40px;
-  background: var(--grad-accent);
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  box-shadow: 0 4px 12px rgba(5, 73, 170, 0.3);
+  width: auto;
+  display: block;
 }
+
 .nav-logo span {
   color: var(--text-primary);
 }
+
 .nav-logo span b {
   color: var(--blue-vivid);
 }
@@ -402,6 +411,9 @@ h5 {
   display: flex;
   align-items: center;
   gap: 4px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links a {
@@ -412,6 +424,7 @@ h5 {
   color: var(--text-secondary);
   transition: all var(--transition);
   position: relative;
+  text-decoration: none;
 }
 
 .nav-links a:hover,
@@ -430,6 +443,8 @@ h5 {
   display: flex;
   align-items: center;
   gap: 12px;
+  flex-shrink: 0;
+  z-index: 1001;
 }
 
 /* Dark mode toggle */
@@ -445,13 +460,15 @@ h5 {
   font-size: 1.1rem;
   transition: all var(--transition);
   cursor: pointer;
+  flex-shrink: 0;
 }
+
 .dark-toggle:hover {
   background: var(--blue-light);
   transform: rotate(20deg);
 }
 
-/* Hamburger */
+/* Hamburger - hidden on desktop */
 .hamburger {
   display: none;
   flex-direction: column;
@@ -465,30 +482,38 @@ h5 {
   border-radius: var(--radius-sm);
   cursor: pointer;
   transition: all var(--transition);
+  flex-shrink: 0;
+  padding: 0;
+  z-index: 1001;
 }
+
 .hamburger span {
   width: 20px;
   height: 2px;
   background: var(--text-primary);
   border-radius: 4px;
   transition: all var(--transition);
+  display: block;
 }
+
 .hamburger.open span:nth-child(1) {
   transform: rotate(45deg) translate(5px, 5px);
 }
+
 .hamburger.open span:nth-child(2) {
   opacity: 0;
   transform: scaleX(0);
 }
+
 .hamburger.open span:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* Mobile Nav */
+/* Mobile Nav - hidden by default */
 .mobile-nav {
   display: none;
   position: fixed;
-  top: var(--nav-height);
+  top: 72px;
   left: 0;
   right: 0;
   background: var(--surface);
@@ -498,15 +523,21 @@ h5 {
   flex-direction: column;
   gap: 4px;
   box-shadow: var(--shadow-lg);
-  transform: translateY(-20px);
+  transform: translateY(-10px);
   opacity: 0;
-  transition: all 0.3s var(--ease);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+  max-height: calc(100vh - 72px);
+  overflow-y: auto;
 }
+
 .mobile-nav.open {
   display: flex;
   transform: translateY(0);
   opacity: 1;
+  pointer-events: all;
 }
+
 .mobile-nav a {
   padding: 14px 16px;
   border-radius: var(--radius-md);
@@ -515,12 +546,267 @@ h5 {
   color: var(--text-secondary);
   transition: all var(--transition);
   border: 1px solid transparent;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
+
 .mobile-nav a:hover,
 .mobile-nav a.active {
   color: var(--blue-vivid);
   background: var(--blue-light);
   border-color: var(--border);
+}
+
+.mobile-nav .btn {
+  justify-content: center;
+  width: 100%;
+  margin-top: 4px;
+  text-align: center;
+}
+
+/* ============================================================
+   TABLET & MOBILE RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  .nav-links a {
+    padding: 8px 12px;
+    font-size: 0.85rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* Smaller navbar on mobile */
+  .navbar {
+    height: 65px;
+    min-height: 65px;
+    max-height: 65px;
+  }
+
+  body {
+    padding-top: 65px;
+  }
+
+  /* Hide nav links on mobile */
+  .nav-links {
+    display: none;
+  }
+
+  /* Hide book pickup button on mobile */
+  .nav-actions .btn {
+    display: none;
+  }
+
+  /* Show dark toggle */
+  .nav-actions .dark-toggle {
+    display: flex;
+  }
+
+  /* Show hamburger */
+  .hamburger {
+    display: flex;
+  }
+
+  /* Mobile menu - properly positioned */
+  .mobile-nav {
+    top: 65px;
+    max-height: calc(100vh - 65px);
+    padding: 16px 20px;
+  }
+
+  .mobile-nav a {
+    padding: 12px 16px;
+    font-size: 0.95rem;
+  }
+
+  /* Container padding */
+  .nav-container {
+    padding: 0 16px;
+  }
+
+  /* Logo adjustments */
+  .nav-logo {
+    font-size: 1rem;
+    gap: 8px;
+  }
+
+  .nav-logo-img {
+    height: 32px;
+    width: auto;
+  }
+
+  .logo-text {
+    font-size: 0.9rem;
+  }
+
+  /* Smaller hamburger */
+  .hamburger {
+    width: 38px;
+    height: 38px;
+  }
+
+  .hamburger span {
+    width: 18px;
+    height: 2px;
+  }
+
+  .dark-toggle {
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+  .nav-logo {
+    font-size: 0.85rem;
+    gap: 6px;
+  }
+
+  .nav-logo-img {
+    height: 28px;
+  }
+
+  .logo-text {
+    font-size: 0.75rem;
+  }
+
+  .nav-container {
+    padding: 0 12px;
+  }
+
+  .hamburger {
+    width: 34px;
+    height: 34px;
+    gap: 4px;
+  }
+
+  .hamburger span {
+    width: 16px;
+    height: 2px;
+  }
+
+  .dark-toggle {
+    width: 34px;
+    height: 34px;
+    font-size: 0.9rem;
+  }
+
+  .mobile-nav {
+    padding: 12px 16px;
+  }
+
+  .mobile-nav a {
+    padding: 10px 14px;
+    font-size: 0.85rem;
+  }
+}
+
+/* Landscape phone fix */
+@media (max-height: 500px) and (orientation: landscape) {
+  .navbar {
+    height: 55px;
+    min-height: 55px;
+    max-height: 55px;
+  }
+
+  body {
+    padding-top: 55px;
+  }
+
+  .mobile-nav {
+    top: 55px;
+    max-height: calc(100vh - 55px);
+    padding: 10px 16px;
+  }
+
+  .mobile-nav a {
+    padding: 8px 12px;
+    font-size: 0.8rem;
+  }
+
+  .nav-logo-img {
+    height: 28px;
+  }
+
+  .hamburger {
+    width: 32px;
+    height: 32px;
+  }
+
+  .dark-toggle {
+    width: 32px;
+    height: 32px;
+    font-size: 0.8rem;
+  }
+}
+/* ============================================================
+   HERO SECTION FIXES
+   ============================================================ */
+
+/* Hero section positioning */
+.hero {
+  position: relative;
+  min-height: 85vh;
+  padding-top: 0;
+  margin-top: 0;
+}
+
+/* Hero content padding */
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding-top: 20px;
+}
+
+/* Hero slides */
+.hero-slide {
+  position: absolute;
+  inset: 0;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+}
+
+@media (max-width: 768px) {
+  .hero {
+    min-height: 80vh;
+  }
+
+  .hero-content {
+    padding: 80px 20px 40px !important;
+  }
+
+  .hero-slide[style*="background-image"] {
+    background-size: cover !important;
+    background-position: 50% 30% !important;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem !important;
+    line-height: 1.2;
+  }
+
+  .hero-sub {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.8rem !important;
+  }
+
+  .hero-sub {
+    font-size: 0.9rem !important;
+  }
+
+  .hero-content {
+    padding: 60px 16px 40px !important;
+  }
 }
 
 /* ---------- FOOTER ---------- */
@@ -800,20 +1086,25 @@ h5 {
 }
 
 /* ---------- Form Styles ---------- */
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-  margin-bottom: 20px;
-}
+
+/* ---------- Form Styles ---------- */
 .form-group label {
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--text-secondary);
 }
-.form-group input,
+
+/* Only target text inputs, selects, and textareas - NOT checkboxes/radios */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="tel"],
+.form-group input[type="password"],
+.form-group input[type="number"],
+.form-group input[type="date"],
+.form-group input[type="time"],
 .form-group select,
 .form-group textarea {
+  width: 100%;
   padding: 13px 16px;
   border: 1.5px solid var(--border);
   border-radius: var(--radius-md);
@@ -825,20 +1116,79 @@ h5 {
   -webkit-appearance: none;
   appearance: none;
 }
-.form-group input:focus,
+
+/* Keep checkboxes and radios with default browser styling */
+.form-group input[type="checkbox"],
+.form-group input[type="radio"] {
+  -webkit-appearance: checkbox;
+  appearance: auto;
+  width: 18px;
+  height: 18px;
+  padding: 0;
+  margin: 0;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+
+/* Focus states for inputs */
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="tel"]:focus,
+.form-group input[type="password"]:focus,
+.form-group input[type="number"]:focus,
+.form-group input[type="date"]:focus,
+.form-group input[type="time"]:focus,
 .form-group select:focus,
 .form-group textarea:focus {
   border-color: var(--blue-vivid);
   box-shadow: 0 0 0 4px rgba(5, 73, 170, 0.1);
 }
+
 .form-group textarea {
   resize: vertical;
   min-height: 100px;
 }
+
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 16px;
+}
+/* ---------- Service Checkbox Styles ---------- */
+.service-checkbox-label {
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  font-weight: 500 !important;
+  cursor: pointer !important;
+  padding: 6px 0 !important;
+  transition: color 0.2s !important;
+  font-size: 0.9rem !important;
+}
+
+.service-checkbox-label:hover {
+  color: var(--blue-vivid) !important;
+}
+
+.service-checkbox-label input[type="checkbox"] {
+  width: 18px !important;
+  height: 18px !important;
+  accent-color: var(--blue-vivid) !important;
+  flex-shrink: 0 !important;
+  -webkit-appearance: checkbox !important;
+  appearance: auto !important;
+  border: 1.5px solid var(--border) !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 4px 12px;
+  margin-top: 4px;
 }
 
 /* ---------- Accordion (FAQ) ---------- */

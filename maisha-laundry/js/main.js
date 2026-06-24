@@ -44,34 +44,60 @@ document.addEventListener('DOMContentLoaded', function () {
     onScroll(); // check on load
   }
 
-  /* ============================================================
-     3. HAMBURGER / MOBILE MENU
-     ============================================================ */
-  const hamburger = document.getElementById('hamburger');
-  const mobileNav = document.getElementById('mobile-nav');
-  if (hamburger && mobileNav) {
-    hamburger.addEventListener('click', () => {
-      const open = mobileNav.classList.toggle('open');
-      hamburger.classList.toggle('open', open);
-      hamburger.setAttribute('aria-expanded', open);
+/* ============================================================
+   HAMBURGER / MOBILE MENU - IMPROVED
+   ============================================================ */
+const hamburger = document.getElementById('hamburger');
+const mobileNav = document.getElementById('mobile-nav');
+
+if (hamburger && mobileNav) {
+  // Toggle menu on hamburger click
+  hamburger.addEventListener('click', function(e) {
+    e.stopPropagation();
+    const isOpen = mobileNav.classList.contains('open');
+    
+    // Toggle classes
+    mobileNav.classList.toggle('open');
+    this.classList.toggle('open');
+    this.setAttribute('aria-expanded', !isOpen);
+    
+    // Prevent body scroll when menu is open
+    document.body.style.overflow = !isOpen ? 'hidden' : '';
+  });
+
+  // Close menu when a link is clicked
+  mobileNav.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', function() {
+      mobileNav.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
     });
-    // Close when a link is tapped
-    mobileNav.querySelectorAll('a').forEach(a =>
-      a.addEventListener('click', () => {
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', function(e) {
+    const navbar = document.querySelector('.navbar');
+    if (navbar && !navbar.contains(e.target) && !mobileNav.contains(e.target)) {
+      if (mobileNav.classList.contains('open')) {
         mobileNav.classList.remove('open');
         hamburger.classList.remove('open');
         hamburger.setAttribute('aria-expanded', 'false');
-      })
-    );
-    // Close when clicking outside
-    document.addEventListener('click', e => {
-      if (!navbar.contains(e.target) && !mobileNav.contains(e.target)) {
-        mobileNav.classList.remove('open');
-        hamburger.classList.remove('open');
-        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
       }
-    });
-  }
+    }
+  });
+
+  // Close menu on escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && mobileNav.classList.contains('open')) {
+      mobileNav.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+  });
+}
 
   /* ============================================================
      4. ACTIVE NAV LINK (highlights current page)

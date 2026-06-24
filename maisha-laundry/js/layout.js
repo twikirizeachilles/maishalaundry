@@ -1,10 +1,3 @@
-/* ============================================================
-   MAISHA LAUNDRY — Nav & Footer Injector  (js/layout.js)
-   All pages live at root level; all hrefs are root-relative.
-   Formspree email: maishadrycleaners@gmail.com
-   ============================================================ */
-
-/* ---- Prevent dark-mode flash (runs before DOM paints) ---- */
 (function () {
   if (localStorage.getItem("maisha-theme") === "dark") {
     document.documentElement.setAttribute("data-theme", "dark");
@@ -12,14 +5,18 @@
 })();
 
 /* ================================================================
-   NAVBAR HTML
+   NAVBAR HTML - FIXED VERSION
    ================================================================ */
 const NAV_HTML = `
 <nav class="navbar" id="navbar">
   <div class="nav-container">
     <a href="index.html" class="nav-logo" aria-label="Maisha Laundry Home">
-      <img src="images/logo1.png" alt="Maisha Laundry Logo" class="nav-logo-img" style="height:40px; width:auto;">
-      <span><b>MAISHA</b>&nbsp;LAUNDRY</span>
+      <img src="images/logo1.png"
+        alt="Maisha Laundry Logo"
+        class="nav-logo-img">
+      <span class="logo-text">
+       <b>MAISHA</b> LAUNDRY
+      </span>
     </a>
 
     <ul class="nav-links" role="list">
@@ -35,7 +32,9 @@ const NAV_HTML = `
     </div>
 
     <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
-      <span></span><span></span><span></span>
+      <span></span>
+      <span></span>
+      <span></span>
     </button>
   </div>
 </nav>
@@ -46,10 +45,10 @@ const NAV_HTML = `
   <a href="services.html" data-page="services.html">🧼 Services</a>
   <a href="contact.html"  data-page="contact.html">📞 Contact</a>
   <div style="height:1px;background:var(--border);margin:12px 0;"></div>
-  <a href="contact.html#booking" class="btn btn-primary" style="justify-content:center; width:100%;">Book Pickup</a>
+  <a href="contact.html#booking" class="btn btn-primary" style="justify-content:center; width:100%;">📅 Book Pickup</a>
   <a href="https://wa.me/256780603561?text=Hello%20Maisha%20Laundry!%20I%27d%20like%20to%20book%20a%20pickup."
      target="_blank" rel="noopener" class="btn btn-whatsapp" style="justify-content:center; width:100%; margin-top:8px;">
-    <i class="fab fa-whatsapp"></i> WhatsApp Us
+    💬 WhatsApp Us
   </a>
 </div>
 `;
@@ -63,12 +62,12 @@ const FOOTER_HTML = `
     <div class="footer-grid">
 
       <!-- Brand -->
-       
       <div class="footer-brand">
         <a href="index.html" class="nav-logo" style="color:#fff;">
           <div class="nav-logo-icon">
-            <img src="images/logo1.png" alt="Maisha Laundry Logo" class="nav-logo-img" style="height:40px; width:auto;"></div>
-          <span><b>MAISHA</b>&nbsp;LAUNDRY</span>
+            <img src="images/logo1.png" alt="Maisha Laundry Logo" class="nav-logo-img" style="height:40px; width:auto;">
+          </div>
+          <span><b>MAISHA</b> LAUNDRY</span>
         </a>
         <p>Kampala's most convenient laundry service. Free pickup &amp; delivery,
            same-day service — because your time matters.</p>
@@ -163,7 +162,7 @@ const WA_BTN = `
    target="_blank" rel="noopener"
    class="whatsapp-float"
    aria-label="Chat with us on WhatsApp">
-  <span class="wa-icon">  <i class="fa-brands fa-whatsapp"></i></span>
+  <span class="wa-icon"><i class="fa-brands fa-whatsapp"></i></span>
   <span class="wa-text">WhatsApp Us</span>
 </a>
 `;

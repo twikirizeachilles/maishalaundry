@@ -156,7 +156,6 @@
       };
     </script>
     <!-- to facilitate tailwindcss to allow proper functionality -->
-
     <style>
       /* ===== HOME PAGE EXTRA STYLES ===== */
 
@@ -189,6 +188,8 @@
         position: relative;
         overflow: hidden;
         padding-top: var(--nav-height);
+        margin-top: 0 !important;
+        padding-top: 0 !important;
       }
       .hero-slides {
         position: absolute;
@@ -606,6 +607,7 @@
           max-width: 280px;
         }
       }
+
       /*<!-- To facilitate tailwindcss to allow proper functionality --> */
       .material-symbols-outlined {
         font-variation-settings:
@@ -654,28 +656,75 @@
           height: 320px;
         }
       }
-      /*<!-- To facilitate tailwindcss to allow proper functionality --> */
-    </style>
-    <!-- Styles specific to the "Why Choose Us" page --->
-    <style>
-      /* Add your CSS styles here */
-      body {
-        margin: 0;
-        font-family: Arial, sans-serif;
+
+      /* ============================================================
+         INDEX PAGE NAVBAR OVERLAP FIXES
+         ============================================================ */
+
+      /* Fix for the index page hero section - targeting the actual element */
+      section.relative.pt-32 {
+        padding-top: 120px !important;
+        position: relative;
+        z-index: 1;
       }
 
+      /* Also target by class combination for more specificity */
+      .relative.pt-32.pb-section-padding {
+        padding-top: 120px !important;
+      }
+
+      @media (max-width: 768px) {
+        section.relative.pt-32 {
+          padding-top: 90px !important;
+        }
+        .relative.pt-32.pb-section-padding {
+          padding-top: 90px !important;
+        }
+      }
+
+      @media (max-width: 480px) {
+        section.relative.pt-32 {
+          padding-top: 80px !important;
+        }
+        .relative.pt-32.pb-section-padding {
+          padding-top: 80px !important;
+        }
+      }
+
+      /* Fix for the image strip container on mobile */
+      @media (max-width: 768px) {
+        .image-strip-container {
+          height: 300px !important;
+          gap: 8px !important;
+        }
+
+        .image-strip-container > div {
+          border-radius: 12px !important;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .image-strip-container {
+          height: 220px !important;
+          gap: 4px !important;
+        }
+      }
+
+      /* ============================================================
+         WHY CHOOSE US SECTION STYLES
+         ============================================================ */
       .why-choose-us {
         background: #003b8e;
         color: white;
         padding: 80px 30px;
       }
 
-      .container {
+      .why-choose-us .container {
         max-width: 1200px;
         margin: auto;
       }
 
-      .header {
+      .why-choose-us .header {
         display: flex;
         justify-content: space-between;
         gap: 60px;
@@ -683,42 +732,42 @@
         flex-wrap: wrap;
       }
 
-      .left {
+      .why-choose-us .left {
         flex: 1;
         min-width: 300px;
       }
 
-      .right {
+      .why-choose-us .right {
         flex: 0 0 350px;
       }
 
-      .subtitle {
+      .why-choose-us .subtitle {
         color: #baf470;
         font-size: 13px;
         font-weight: 700;
         letter-spacing: 2px;
       }
 
-      .left h2 {
+      .why-choose-us .left h2 {
         font-size: 48px;
         line-height: 1.2;
         margin-top: 15px;
         margin-bottom: 0;
       }
 
-      .right p {
+      .why-choose-us .right p {
         color: rgba(255, 255, 255, 0.85);
         line-height: 1.8;
       }
 
-      .features {
+      .why-choose-us .features {
         position: relative;
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         gap: 30px;
       }
 
-      .curve {
+      .why-choose-us .curve {
         position: absolute;
         top: -30px;
         left: 0;
@@ -727,7 +776,7 @@
         z-index: 0;
       }
 
-      .curve path {
+      .why-choose-us .curve path {
         fill: none;
         stroke: #baf470;
         stroke-width: 2;
@@ -735,88 +784,81 @@
         opacity: 0.4;
       }
 
-      .feature {
+      .why-choose-us .feature {
         text-align: center;
         position: relative;
         z-index: 2;
       }
 
-      .feature-1,
-      .feature-3 {
+      .why-choose-us .feature-1,
+      .why-choose-us .feature-3 {
         margin-top: 20px;
       }
 
-      .feature-2,
-      .feature-4 {
+      .why-choose-us .feature-2,
+      .why-choose-us .feature-4 {
         margin-top: 70px;
       }
 
-      .icon-circle {
+      .why-choose-us .icon-circle {
         width: 80px;
         height: 80px;
         background: #baf470;
         border-radius: 50%;
         margin: 0 auto 25px;
-
         display: flex;
         align-items: center;
         justify-content: center;
-
         font-size: 34px;
         color: #003b8e;
-
         box-shadow: 0 0 0 5px rgba(186, 244, 112, 0.25);
-
         transition: 0.3s;
       }
 
-      .feature:hover .icon-circle {
+      .why-choose-us .feature:hover .icon-circle {
         transform: translateY(-8px) scale(1.08);
       }
 
-      .feature h3 {
+      .why-choose-us .feature h3 {
         color: #baf470;
         font-size: 22px;
         margin-bottom: 12px;
       }
 
-      .feature p {
+      .why-choose-us .feature p {
         color: rgba(255, 255, 255, 0.85);
         line-height: 1.6;
         font-size: 15px;
       }
+
       @media (max-width: 992px) {
-        .features {
+        .why-choose-us .features {
           grid-template-columns: repeat(2, 1fr);
         }
-
-        .feature {
+        .why-choose-us .feature {
           margin-top: 0 !important;
         }
-
-        .curve {
+        .why-choose-us .curve {
           display: none;
         }
       }
 
       @media (max-width: 768px) {
-        .header {
+        .why-choose-us .header {
           flex-direction: column;
         }
-
-        .left h2 {
+        .why-choose-us .left h2 {
           font-size: 36px;
         }
-
-        .features {
+        .why-choose-us .features {
           grid-template-columns: 1fr;
         }
-
-        .right {
+        .why-choose-us .right {
           flex: 1;
         }
       }
     </style>
+
     <script>
       document.querySelectorAll(".icon-circle").forEach((icon) => {
         icon.addEventListener("mouseenter", () => {
@@ -844,7 +886,8 @@
     <!-- ===== HERO SECTION ===== -->
     <!-- Hero Section -->
     <section
-      class="relative pt-32 pb-section-padding px-margin-mobile md:px-gutter max-w-container-max mx-auto overflow-hidden"
+      class="relative pb-section-padding px-margin-mobile md:px-gutter max-w-container-max mx-auto overflow-hidden"
+      style="padding-top: clamp(72px, 10vh, 120px)"
     >
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
         <!-- Left Content -->

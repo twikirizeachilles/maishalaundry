@@ -216,6 +216,14 @@
         font-size: 3.6rem;
         margin-bottom: 12px;
       }
+      .error-message {
+        margin-top: 16px;
+        padding: 16px;
+        background: #fee2e2;
+        border: 1px solid #fca5a5;
+        border-radius: 14px;
+        color: #991b1b;
+      }
     </style>
   </head>
   <body>
@@ -436,9 +444,10 @@
                 Fill in the details and we'll contact you within minutes.
               </p>
 
+              <!-- Formspree form with your ID -->
               <form
                 class="maisha-form"
-                action="https://formspree.io/f/YOUR_FORM_ID"
+                action="https://formspree.io/f/mpqeverk"
                 method="POST"
               >
                 <!-- hidden formspree config -->
@@ -641,10 +650,10 @@
                   id="submitBtn"
                   class="btn-primary w-full py-4 rounded-2xl font-bold text-lg shadow-md hover:shadow-lg transition-smooth mt-2"
                 >
-                   Send Message 
+                 Submit Request
                 </button>
                 <p class="text-xs text-muted text-center mt-4">
-                   Your info is safe with us. We'll contact you shortly.<br />Or
+                  Your info is safe with us. We'll contact you shortly.<br />Or
                   email
                   <a
                     href="mailto:maishadrycleaners@gmail.com"
@@ -745,59 +754,67 @@
 
             // Prepare FormData
             const formData = new FormData(form);
-            // replace services with comma separated string
-            formData.set("services[]", selected.join(", "));
-            // also add a readable field
-            formData.set("selected_services", selected.join(", "));
+            // Remove the individual services[] entries and replace with comma-separated string
+            formData.delete("services[]");
+            formData.append("services", selected.join(", "));
+            // Also add a readable field
+            formData.append("selected_services", selected.join(", "));
 
-            // show loading
+            // Show loading
             const originalHtml = submitBtn.innerHTML;
             submitBtn.innerHTML = "⏳ Sending...";
             submitBtn.disabled = true;
 
+            // Remove any existing error messages
+            const existingError = form.querySelector(".error-message");
+            if (existingError) existingError.remove();
+
+            // Submit to Formspree
             fetch(form.action, {
               method: "POST",
               body: formData,
               headers: { Accept: "application/json" },
             })
-              .then((res) => {
-                if (res.ok) {
+              .then((response) => {
+                if (response.ok) {
+                  // Success - show thank you message
                   form.innerHTML = `
-                <div class="form-success">
-                  <div class="success-icon">✅</div>
-                  <h3 class="text-2xl font-bold text-blue-700">Thank You! Message Received.</h3>
-                  <p class="text-muted max-w-sm mx-auto mt-2">Our team will contact you shortly on your phone number. You can also reach us directly on WhatsApp.</p>
-                  <a href="https://wa.me/256780603561" target="_blank" class="btn-whatsapp inline-block mt-4 px-6 py-3 rounded-2xl font-bold">💬 Chat on WhatsApp: 0780 603561</a>
-                </div>
-              `;
-                } else throw new Error("server error");
+                    <div class="form-success">
+                      <div class="success-icon">✅</div>
+                      <h3 class="text-2xl font-bold text-blue-700">Thank You! Message Sent Successfully.</h3>
+                      <p class="text-muted max-w-sm mx-auto mt-2">We have received your message and will contact you shortly via phone or email.</p>
+                      <div class="flex flex-wrap justify-center gap-3 mt-6">
+                        <a href="https://wa.me/256780603561" target="_blank" class="btn-whatsapp inline-block px-6 py-3 rounded-2xl font-bold">
+                          <i class="fa-brands fa-whatsapp"></i> Chat on WhatsApp
+                        </a>
+                        <a href="tel:+256780603561" class="btn-primary inline-block px-6 py-3 rounded-2xl font-bold">
+                          <i class="fa-solid fa-phone"></i> Call Us
+                        </a>
+                      </div>
+                    </div>
+                  `;
+                } else {
+                  throw new Error("Server error");
+                }
               })
-              .catch(() => {
-                // fallback: open WhatsApp with pre-filled message
-                const name = document.getElementById("c-name")?.value || "";
-                const phone = document.getElementById("c-phone")?.value || "";
-                const address =
-                  document.getElementById("c-address")?.value || "";
-                const msg = document.getElementById("c-msg")?.value || "";
-                const services = selected.join(", ");
-                const waMsg = encodeURIComponent(
-                  "Hello Maisha Laundry!\n\nName: " +
-                    name +
-                    "\nPhone: " +
-                    phone +
-                    "\nAddress: " +
-                    address +
-                    "\nServices: " +
-                    services +
-                    "\nMessage: " +
-                    msg,
-                );
-                window.open(
-                  "https://wa.me/256780603561?text=" + waMsg,
-                  "_blank",
-                );
+              .catch((error) => {
+                // If Formspree fails, show a user-friendly error message
+                console.error("Form submission error:", error);
                 submitBtn.innerHTML = originalHtml;
                 submitBtn.disabled = false;
+                
+                // Show error message
+                const errorDiv = document.createElement("div");
+                errorDiv.className = "error-message";
+                errorDiv.innerHTML = `
+                  <strong>⚠️ Something went wrong.</strong><br>
+                  We couldn't send your message. Please try again or contact us directly at 
+                  <a href="tel:+256780603561" class="font-semibold underline text-red-800">0780 603561</a> 
+                  or email 
+                  <a href="mailto:maishadrycleaners@gmail.com" class="font-semibold underline text-red-800">maishadrycleaners@gmail.com</a>
+                `;
+                
+                form.appendChild(errorDiv);
               });
           });
         }
