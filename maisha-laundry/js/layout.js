@@ -67,7 +67,7 @@ const FOOTER_HTML = `
           <div class="nav-logo-icon">
             <img src="images/logo1.png" alt="Maisha Laundry Logo" class="nav-logo-img" style="height:40px; width:auto;">
           </div>
-          <span><b>MAISHA</b> LAUNDRY</span>
+          <span ><b style="color:white;">MAISHA</b> LAUNDRY</span>
         </a>
         <p>Kampala's most convenient laundry service. Free pickup &amp; delivery,
            same-day service — because your time matters.</p>
